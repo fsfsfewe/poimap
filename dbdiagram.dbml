@@ -1,0 +1,153 @@
+
+Table users {
+  id integer [primary key]
+  name varchar
+  email varchar
+  password varchar
+  role varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+
+Table poi {
+  id integer [primary key]
+  name varchar
+  latitude float
+  longitude float
+  description text
+  view_count integer
+  status varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+
+Table shops {
+  id integer [primary key]
+  name varchar
+  description text
+  address varchar
+  latitude float
+  longitude float
+  phone varchar
+  opening_hours varchar
+  status varchar
+  owner_id integer
+  poi_id integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+
+Table poi_translation {
+  id integer [primary key]
+  poi_id integer
+  language varchar
+  content text
+  audio_url varchar
+  updated_at timestamp
+}
+
+Table shop_translation {
+  id integer [primary key]
+  shop_id integer
+  language varchar
+  name varchar
+  description text
+  updated_at timestamp
+}
+
+
+Table search_history {
+  id integer [primary key]
+  user_id integer
+  keyword varchar
+  search_type varchar
+  searched_at timestamp
+}
+
+Table visit_history {
+  id integer [primary key]
+  user_id integer
+  poi_id integer
+  visit_time timestamp
+}
+
+Table shop_visit_history {
+  id integer [primary key]
+  user_id integer
+  shop_id integer
+  visit_time timestamp
+}
+
+Table audio_listen_history {
+  id integer [primary key]
+  user_id integer
+  poi_id integer
+  duration integer
+  listen_time timestamp
+  language varchar
+}
+
+
+Table shop_reviews {
+  id integer [primary key]
+  user_id integer
+  shop_id integer
+  rating integer
+  comment text
+  created_at timestamp
+}
+
+
+Table favorite_shops {
+  id integer [primary key]
+  user_id integer
+  shop_id integer
+}
+
+
+Table shop_images {
+  id integer [primary key]
+  shop_id integer
+  image_url varchar
+}
+
+
+Table user_behavior {
+  id integer [primary key]
+  user_id integer
+  shop_id integer
+  poi_id integer
+  action_type varchar
+  weight float
+  created_at timestamp
+}
+
+
+
+// Users
+Ref: shops.owner_id > users.id
+Ref: search_history.user_id > users.id
+Ref: visit_history.user_id > users.id
+Ref: shop_visit_history.user_id > users.id
+Ref: shop_reviews.user_id > users.id
+Ref: favorite_shops.user_id > users.id
+Ref: audio_listen_history.user_id > users.id
+Ref: user_behavior.user_id > users.id
+
+// POI
+Ref: shops.poi_id > poi.id
+Ref: poi_translation.poi_id > poi.id
+Ref: visit_history.poi_id > poi.id
+Ref: audio_listen_history.poi_id > poi.id
+Ref: user_behavior.poi_id > poi.id
+
+// Shops
+Ref: shop_translation.shop_id > shops.id
+Ref: shop_images.shop_id > shops.id
+Ref: shop_reviews.shop_id > shops.id
+Ref: shop_visit_history.shop_id > shops.id
+Ref: favorite_shops.shop_id > shops.id
+Ref: user_behavior.shop_id > shops.id
