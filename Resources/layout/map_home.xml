@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/body"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F0FF">
+
+	<!-- CATEGORY (nút ngang) -->
+	<HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="10dp">
+
+		<LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+			<Button
+                android:text="Museum"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#8A2BE2"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+			<Button
+                android:text="Restaurant"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#D8B4F8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+			<Button
+                android:text="Cafe"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#D8B4F8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+			<Button
+                android:text="Park"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+	</HorizontalScrollView>
+
+
+	<!-- BOTTOM MENU -->
+	<LinearLayout
+        android:id="@+id/bottomMenu"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:gravity="space-around"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+		<ImageView
+            android:src="@android:drawable/ic_dialog_map"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+		<ImageView
+            android:src="@android:drawable/ic_menu_mylocation"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+		<ImageView
+            android:src="@android:drawable/ic_dialog_info"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+		<ImageView
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
