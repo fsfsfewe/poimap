@@ -1,20 +1,22 @@
 ﻿using Android.App;
 using Android.Content.PM;
+using Android.Gms.Maps;
+using Android.Gms.Maps.Model; // Thư viện để làm Ghim (Marker) và Camera bản đồ
+using Android.Gms.Tasks; // Thư viện để lắng nghe dữ liệu trả về
 using Android.OS;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.App;
 using AndroidX.Core.Content;
+using Firebase.Firestore; // Thư viện đọc dữ liệu Firebase
 using Google.Android.Material.BottomNavigation;
 using Google.Android.Material.Navigation;
-using Android.Gms.Maps;
-using Android.Gms.Maps.Model; // Thư viện để làm Ghim (Marker) và Camera bản đồ
-using Firebase.Firestore; // Thư viện đọc dữ liệu Firebase
-using Android.Gms.Tasks; // Thư viện để lắng nghe dữ liệu trả về
+using Org.Json; // Thư viện đọc JSON có sẵn của Android
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using Org.Json; // Thư viện đọc JSON có sẵn của Android
+using Android.Content;
+
 
 namespace poimap
 {
@@ -25,13 +27,83 @@ namespace poimap
         private GoogleMap? _map;
         private BottomNavigationView? _bottomNavigation;
         private HorizontalScrollView? _categoryBar;
+        private Android.Widget.LinearLayout? _searchLayout;
 
         private SupportMapFragment? _mapFragment;
         private ProfileFragment? _profileFragment;
         private ToursFragment? _toursFragment;
         private AndroidX.Fragment.App.Fragment? _activeFragment;
+        // --- CÁC BIẾN CHO CHỨC NĂNG TÌM KIẾM ---
+        private Android.Widget.EditText? _edtSearch;
+        private Android.Widget.ListView? _listSearchResults;
+        private Android.Widget.ArrayAdapter<string>? _searchAdapter;
+        private List<string> _searchResultsNames = new List<string>();
+        // Từ điển lưu trữ các Marker trên bản đồ và Thể loại (category) của nó
+        private Dictionary<Marker, string> _markerCategoryDict = new Dictionary<Marker, string>();
+
+        // Thêm dòng này ở dưới cùng của khu vực khai báo biến
+        private Dictionary<string, string> _audioUrlsDict = new Dictionary<string, string>();
+
+        private Dictionary<string, string> _shopCategoryByNameDict = new Dictionary<string, string>();
+
+        // Dictionary để lưu cặp <Tên quán, Tọa độ> giúp tìm kiếm nhanh
+        private Dictionary<string, LatLng> _allShopsDict = new Dictionary<string, LatLng>();
 
         private const int RequestLocationId = 1;
+
+        // Xử lý khi người dùng gõ chữ vào thanh tìm kiếm
+        private void EdtSearch_TextChanged(object? sender, Android.Text.TextChangedEventArgs e)
+        {
+            string keyword = e.Text?.ToString().ToLower() ?? "";
+            _searchResultsNames.Clear();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                // Nếu không nhập gì, hiển thị tất cả quán (Auto gợi ý)
+                ShowAllQ4Shops();
+                return;
+            }
+
+            // Nếu có nhập chữ, lọc danh sách
+            foreach (var shopName in _allShopsDict.Keys)
+            {
+                if (shopName.ToLower().Contains(keyword))
+                {
+                    _searchResultsNames.Add(shopName);
+                }
+            }
+
+            if (_searchResultsNames.Count > 0)
+            {
+                _listSearchResults!.Visibility = ViewStates.Visible;
+                _searchAdapter?.NotifyDataSetChanged();
+            }
+            else
+            {
+                _listSearchResults!.Visibility = ViewStates.Gone;
+            }
+        }
+
+        // Xử lý khi người dùng bấm vào một quán trong danh sách xổ xuống
+        private void ListSearchResults_ItemClick(object? sender, Android.Widget.AdapterView.ItemClickEventArgs e)
+        {
+            string selectedName = _searchResultsNames[e.Position];
+
+            if (_allShopsDict.TryGetValue(selectedName, out LatLng targetLocation))
+            {
+                // 1. Bay camera tới quán đó và zoom to lên
+                _map?.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(targetLocation, 18f));
+
+                // 2. Điền tên quán vào thanh tìm kiếm và ẩn danh sách đi
+                _edtSearch!.Text = selectedName;
+                _listSearchResults!.Visibility = ViewStates.Gone;
+                _edtSearch.ClearFocus();
+
+                // 3. Ẩn bàn phím ảo của điện thoại cho đỡ vướng
+                var imm = (Android.Views.InputMethods.InputMethodManager?)GetSystemService(InputMethodService);
+                imm?.HideSoftInputFromWindow(_edtSearch.WindowToken, 0);
+            }
+        }
 
         protected override void OnCreate(Bundle? savedInstanceState)
         {
@@ -41,10 +113,47 @@ namespace poimap
             _bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
             _categoryBar = FindViewById<HorizontalScrollView>(Resource.Id.category_bar);
 
+            // --- ÁNH XẠ THANH TÌM KIẾM ---
+            _searchLayout = FindViewById<Android.Widget.LinearLayout>(Resource.Id.search_layout);
+            _edtSearch = FindViewById<Android.Widget.EditText>(Resource.Id.edtSearch);
+            _listSearchResults = FindViewById<Android.Widget.ListView>(Resource.Id.listSearchResults);
+
+
+
+            // Cài đặt Adapter cho danh sách kết quả
+            _searchAdapter = new Android.Widget.ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, _searchResultsNames);
+            if (_listSearchResults != null)
+            {
+                _listSearchResults.Adapter = _searchAdapter;
+                _listSearchResults.ItemClick += ListSearchResults_ItemClick; // Sự kiện bấm vào kết quả
+            }
+
+            if (_edtSearch != null)
+            {
+                _edtSearch.TextChanged += EdtSearch_TextChanged;
+
+                // MỚI: Khi chạm vào ô tìm kiếm, tự động xổ ra danh sách gợi ý
+                _edtSearch.FocusChange += (s, e) =>
+                {
+                    if (e.HasFocus && string.IsNullOrEmpty(_edtSearch.Text))
+                    {
+                        ShowAllQ4Shops();
+                    }
+                };
+            }
+            // -----------------------------
+
             if (_bottomNavigation != null)
             {
                 _bottomNavigation.ItemSelected += BottomNavigation_ItemSelected;
             }
+
+            // BẮT SỰ KIỆN CLICK CHO CÁC NÚT DANH MỤC
+            FindViewById<Android.Widget.Button>(Resource.Id.btnAll)?.Click += (s, e) => FilterMarkersByCategory("all");
+            FindViewById<Android.Widget.Button>(Resource.Id.btnMuseum)?.Click += (s, e) => FilterMarkersByCategory("museum");
+            FindViewById<Android.Widget.Button>(Resource.Id.btnRestaurant)?.Click += (s, e) => FilterMarkersByCategory("restaurant");
+            FindViewById<Android.Widget.Button>(Resource.Id.btnCafe)?.Click += (s, e) => FilterMarkersByCategory("cafe");
+            FindViewById<Android.Widget.Button>(Resource.Id.btnPark)?.Click += (s, e) => FilterMarkersByCategory("park");
 
             SetupFragments();
         }
@@ -72,16 +181,22 @@ namespace poimap
                 case Resource.Id.navigation_map:
                     SwitchFragment(_mapFragment);
                     if (_categoryBar != null) _categoryBar.Visibility = ViewStates.Visible;
+                    // Hiện thanh tìm kiếm ở Map
+                    if (_searchLayout != null) _searchLayout.Visibility = ViewStates.Visible;
                     break;
 
                 case Resource.Id.navigation_tours:
                     SwitchFragment(_toursFragment);
                     if (_categoryBar != null) _categoryBar.Visibility = ViewStates.Gone;
+                    // Ẩn thanh tìm kiếm ở Tour
+                    if (_searchLayout != null) _searchLayout.Visibility = ViewStates.Gone;
                     break;
 
                 case Resource.Id.navigation_profile:
                     SwitchFragment(_profileFragment);
                     if (_categoryBar != null) _categoryBar.Visibility = ViewStates.Gone;
+                    // Ẩn thanh tìm kiếm ở Profile
+                    if (_searchLayout != null) _searchLayout.Visibility = ViewStates.Gone;
                     break;
             }
             e.Handled = true;
@@ -129,37 +244,60 @@ namespace poimap
             e.Handled = true; // Báo cho hệ thống biết mình đã tự xử lý click
         }
 
-        // Hàm 2: Khi người dùng bấm vào cái bong bóng tên quán (Để bắt đầu chỉ đường)
-        private async void Map_InfoWindowClick(object? sender, GoogleMap.InfoWindowClickEventArgs e)
+        private void Map_InfoWindowClick(object? sender, GoogleMap.InfoWindowClickEventArgs e)
         {
             var marker = e.Marker;
-            var destination = marker.Position;
+            // SỬA THÀNH:
+            string category = _shopCategoryByNameDict.ContainsKey(marker.Title) ? _shopCategoryByNameDict[marker.Title] : "restaurant";
 
-            Android.Widget.Toast.MakeText(this, $"Đang tìm đường đến: {marker.Title}", Android.Widget.ToastLength.Short)?.Show();
+            // Tạo một cái Menu popup hỏi người dùng muốn làm gì
+            var builder = new Android.App.AlertDialog.Builder(this);
+            builder.SetTitle(marker.Title);
 
-            // 1. Lấy dịch vụ định vị của điện thoại
-            Android.Locations.LocationManager? locationManager = (Android.Locations.LocationManager?)GetSystemService(LocationService);
+            // Tùy theo thể loại quán mà hiện Nút bấm khác nhau
+            List<string> options = new List<string> { "Chỉ đường tới đây" };
 
-            // 2. Thử lấy vị trí hiện tại thông qua Mạng/Wifi (nhanh hơn)
-            Android.Locations.Location? myLocation = locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.NetworkProvider);
-
-            // 3. Nếu không có Wifi, thử lấy bằng GPS
-            if (myLocation == null)
-            {
-                myLocation = locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.GpsProvider);
-            }
-
-            // 4. Nếu lấy được vị trí thành công thì bắt đầu vẽ đường
-            if (myLocation != null)
-            {
-                LatLng realLocation = new LatLng(myLocation.Latitude, myLocation.Longitude);
-                await DrawRouteAsync(realLocation, destination);
-            }
+            if (category == "museum" || category == "park")
+                options.Add("Nghe Thuyết Minh (Audio)");
             else
+                options.Add("Đánh giá Quán này");
+
+            builder.SetItems(options.ToArray(), async (dialog, args) =>
             {
-                // Trường hợp máy ảo chưa kịp cập nhật vị trí hoặc user tắt GPS
-                Android.Widget.Toast.MakeText(this, "Chưa xác định được vị trí của bạn, hãy bấm nút La Bàn trên map trước!", Android.Widget.ToastLength.Long)?.Show();
-            }
+                int choice = args.Which;
+                if (choice == 0) // Chọn Chỉ đường
+                {
+                    Android.Locations.LocationManager? locationManager = (Android.Locations.LocationManager?)GetSystemService(LocationService);
+                    Android.Locations.Location? myLoc = locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.NetworkProvider)
+                                                     ?? locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.GpsProvider);
+                    if (myLoc != null)
+                    {
+                        Toast.MakeText(this, "Đang vẽ đường...", ToastLength.Short)?.Show();
+                        await DrawRouteAsync(new LatLng(myLoc.Latitude, myLoc.Longitude), marker.Position);
+                    }
+                    else Toast.MakeText(this, "Chưa lấy được GPS!", ToastLength.Short)?.Show();
+                }
+                // THAY THẾ KHỐI LỆNH CŨ BẰNG KHỐI NÀY:
+                else if (choice == 1 && options[1].Contains("Audio"))
+                {
+                    Intent intent = new Intent(this, typeof(PoiAudioActivity));
+                    intent.PutExtra("POI_NAME", marker.Title);
+
+                    // Tìm xem quán này có link audio trên Firebase không, nếu không có thì dùng link trống
+                    string actualAudioUrl = _audioUrlsDict.ContainsKey(marker.Title) ? _audioUrlsDict[marker.Title] : "";
+                    intent.PutExtra("AUDIO_URL", actualAudioUrl);
+
+                    StartActivity(intent);
+                }
+                else if (choice == 1 && options[1].Contains("Đánh giá")) // Chọn Đánh giá
+                {
+                    Intent intent = new Intent(this, typeof(ShopReviewActivity));
+                    intent.PutExtra("SHOP_NAME", marker.Title);
+                    StartActivity(intent);
+                }
+            });
+
+            builder.Show();
         }
 
         // --- CÁC HÀM XỬ LÝ FIREBASE ---
@@ -170,7 +308,6 @@ namespace poimap
             database.Collection("shops").Get().AddOnSuccessListener(this);
         }
 
-        // Hàm này sẽ tự động chạy khi Firebase trả dữ liệu về thành công
         public void OnSuccess(Java.Lang.Object? result)
         {
             var snapshot = (QuerySnapshot)result;
@@ -183,23 +320,63 @@ namespace poimap
                     double lat = document.GetDouble("latitude")?.DoubleValue() ?? 0;
                     double lng = document.GetDouble("longitude")?.DoubleValue() ?? 0;
 
-                    // Tạo điểm ghim (Marker)
+                    // ĐỌC THÊM THỂ LOẠI TỪ FIREBASE (Nếu không có thì mặc định là restaurant)
+                    string category = document.GetString("category")?.ToLower() ?? "restaurant";
+
+                    // THÊM ĐOẠN MỚI NÀY VÀO NGAY BÊN DƯỚI:
+                    string audioUrl = document.GetString("audio_url") ?? "";
+                    if (!string.IsNullOrEmpty(audioUrl))
+                    {
+                        _audioUrlsDict[name] = audioUrl; // Lưu link lại với chìa khóa là Tên quán
+                    }
+
+                    // (Tùy chọn) Kiểm tra điều kiện Quận 4 ở đây nếu bạn muốn
+
                     LatLng location = new LatLng(lat, lng);
-                    MarkerOptions marker = new MarkerOptions();
-                    marker.SetPosition(location);
-                    marker.SetTitle(name);
+                    MarkerOptions markerOptions = new MarkerOptions();
+                    markerOptions.SetPosition(location);
+                    markerOptions.SetTitle(name);
 
-                    // Đóng đinh lên bản đồ
-                    _map?.AddMarker(marker);
+                    Marker? m = _map?.AddMarker(markerOptions);
+
+                    if (m != null)
+                    {
+                        // Lưu Marker và Thể loại của nó vào danh sách (Dùng cho hàm Lọc ẩn/hiện)
+                        _markerCategoryDict[m] = category;
+                    }
+
+                    // THÊM DÒNG NÀY VÀO ĐỂ TÌM KIẾM KHI CLICK:
+                    _shopCategoryByNameDict[name] = category;
+
+                    _allShopsDict[name] = location;
                 }
-
-                // Cuối cùng: Cho máy bay (Camera) bay thẳng tới Phố Vĩnh Khánh - Quận 4
-                LatLng vinhKhanhCenter = new LatLng(10.7588, 106.7011);
-                _map?.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(vinhKhanhCenter, 16f));
             }
         }
+
+
         // -------------------------------
 
+
+        private void FilterMarkersByCategory(string selectedCategory)
+        {
+            // Duyệt qua toàn bộ các Marker đang có
+            foreach (var item in _markerCategoryDict)
+            {
+                Marker marker = item.Key;
+                string cat = item.Value;
+
+                // Nếu chọn "all" hoặc thể loại của marker khớp với nút bấm -> HIỆN
+                if (selectedCategory == "all" || cat.Contains(selectedCategory))
+                {
+                    marker.Visible = true;
+                }
+                else
+                {
+                    // Nếu không khớp -> ẨN
+                    marker.Visible = false;
+                }
+            }
+        }
         private void CheckAndRequestLocationPermission()
         {
             if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
@@ -222,6 +399,38 @@ namespace poimap
                 }
             }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private void ZoomToUserLocation()
+        {
+            Android.Locations.LocationManager? locationManager = (Android.Locations.LocationManager?)GetSystemService(LocationService);
+            Android.Locations.Location? myLocation = locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.NetworkProvider);
+
+            if (myLocation == null)
+            {
+                myLocation = locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.GpsProvider);
+            }
+
+            if (myLocation != null && _map != null)
+            {
+                // Lấy tọa độ của bạn và bay tới đó, zoom gần lại (mức 16f)
+                LatLng myLatLng = new LatLng(myLocation.Latitude, myLocation.Longitude);
+                _map.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(myLatLng, 16f));
+            }
+        }
+        private void ShowAllQ4Shops()
+        {
+            _searchResultsNames.Clear();
+            foreach (var shopName in _allShopsDict.Keys)
+            {
+                _searchResultsNames.Add(shopName);
+            }
+
+            if (_searchResultsNames.Count > 0 && _listSearchResults != null)
+            {
+                _listSearchResults.Visibility = ViewStates.Visible;
+                _searchAdapter?.NotifyDataSetChanged();
+            }
         }
 
         // Biến lưu trữ đường vẽ hiện tại (để xóa đường cũ khi chọn quán khác)

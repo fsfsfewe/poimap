@@ -11,11 +11,41 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation" />
 
-	<HorizontalScrollView
-        android:id="@+id/category_bar"
+	<LinearLayout
+        android:id="@+id/search_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="6dp">
+
+		<EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:hint="Tìm kiếm quán ăn..."
+            android:paddingLeft="15dp"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:drawablePadding="10dp"
+            android:singleLine="true"/>
+
+		<ListView
+            android:id="@+id/listSearchResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:visibility="gone" />
+	</LinearLayout>
+
+	<HorizontalScrollView
+        android:id="@+id/category_bar"
+        android:layout_below="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:scrollbars="none">
 
@@ -24,10 +54,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-			<Button android:text="Museum" android:layout_marginRight="10dp" android:backgroundTint="#8A2BE2" android:textColor="#FFFFFF" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-			<Button android:text="Restaurant" android:layout_marginRight="10dp" android:backgroundTint="#D8B4F8" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-			<Button android:text="Cafe" android:layout_marginRight="10dp" android:backgroundTint="#D8B4F8" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-			<Button android:text="Park" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+			<Button android:id="@+id/btnAll" android:text="Tất cả" android:layout_marginRight="10dp" android:backgroundTint="#6A0DAD" android:textColor="#FFFFFF" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+			<Button android:id="@+id/btnMuseum" android:text="Museum" android:layout_marginRight="10dp" android:backgroundTint="#8A2BE2" android:textColor="#FFFFFF" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+			<Button android:id="@+id/btnRestaurant" android:text="Restaurant" android:layout_marginRight="10dp" android:backgroundTint="#D8B4F8" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+			<Button android:id="@+id/btnCafe" android:text="Cafe" android:layout_marginRight="10dp" android:backgroundTint="#D8B4F8" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+			<Button android:id="@+id/btnPark" android:text="Park" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 		</LinearLayout>
 	</HorizontalScrollView>
 
