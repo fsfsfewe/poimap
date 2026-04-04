@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+        android:id="@+id/navigation_map"
+        android:title="Bản đồ"
+        android:icon="@android:drawable/ic_dialog_map" />
+	<item
+        android:id="@+id/navigation_tours"
+        android:title="Tour Ăn Uống"
+        android:icon="@android:drawable/ic_menu_sort_by_size" />
+	<item
+        android:id="@+id/navigation_profile"
+        android:title="Cá nhân"
+        android:icon="@android:drawable/ic_menu_myplaces" />
+</menu>

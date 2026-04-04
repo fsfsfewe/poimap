@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F0FF">
+
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Danh sách Tour Ăn Uống"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#6A0DAD"
+        android:textAlignment="center"
+        android:padding="20dp"/>
+
+	<ListView
+        android:id="@+id/listTours"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#E0E0E0"
+        android:dividerHeight="1dp"
+        android:padding="10dp"/>
+</LinearLayout>

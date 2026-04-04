@@ -55,7 +55,6 @@
         android:orientation="horizontal"
         android:background="#FFFFFF"
         android:layout_alignParentBottom="true"
-        android:gravity="space-around"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="60dp">
