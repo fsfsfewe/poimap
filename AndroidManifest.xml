@@ -3,10 +3,11 @@
 
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	
 
 	<application android:allowBackup="true" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
 
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value="DÁN_API_KEY_CỦA_BẠN_VÀO_ĐÂY" />
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBY1bmxcN8icZokOhBkLMo8TKj-WuHf25o" />
 
 	</application>
 </manifest>
