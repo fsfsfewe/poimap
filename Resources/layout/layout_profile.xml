@@ -6,55 +6,48 @@
     android:background="#F5F0FF"
     android:padding="20dp">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+	<ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:src="@android:drawable/ic_menu_myplaces"
         android:background="#D8B4F8"
-        android:padding="20dp"/>
+        android:padding="15dp"/>
 
-    <TextView
+	<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="Nguyễn Văn A"
+        android:layout_marginTop="10dp"
+        android:text="Khách hàng Ẩn danh"
         android:textColor="#6A0DAD"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
+	<TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="nguyenvana@email.com"
+        android:text="LỊCH SỬ ĐÁNH GIÁ CỦA BẠN"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:textColor="#888888"
-        android:textSize="16sp" />
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"/>
 
-    <Button
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayoutProfile"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:text="Lịch sử nghe Audio (POI)"
-        android:backgroundTint="#8A2BE2"
-        android:textColor="#FFFFFF"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:text="Các Shop đã Đánh giá"
-        android:backgroundTint="#8A2BE2"
-        android:textColor="#FFFFFF"/>
+		<ListView
+            android:id="@+id/listMyReviews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10dp"
+            android:scrollbars="none"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:text="Đăng xuất"
-        android:backgroundTint="#FF3B30"
-        android:textColor="#FFFFFF"/>
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

@@ -34,7 +34,6 @@ namespace poimap
                 _mediaPlayer.Prepared += (s, e) => Toast.MakeText(this, "Đã tải xong Audio, sẵn sàng phát!", ToastLength.Short)?.Show();
             }
             catch { Toast.MakeText(this, "Lỗi tải Audio", ToastLength.Short)?.Show(); }
-
             // Bắt sự kiện nút Play/Pause
             if (_btnPlayPause != null)
             {
@@ -47,8 +46,16 @@ namespace poimap
                     }
                     else
                     {
-                        _mediaPlayer.Start();
-                        _btnPlayPause.SetImageResource(Android.Resource.Drawable.IcMediaPause);
+                        // TRƯỚC KHI BẤM PLAY BẰNG TAY: Vẫn phải xin phép hệ thống!
+                        var audioManager = (AudioManager?)GetSystemService(AudioService);
+                        var listener = new MyAudioFocusListener(_mediaPlayer);
+                        var focusResult = audioManager?.RequestAudioFocus(listener, Android.Media.Stream.Music, Android.Media.AudioFocus.Gain);
+
+                        if (focusResult == AudioFocusRequest.Granted)
+                        {
+                            _mediaPlayer.Start();
+                            _btnPlayPause.SetImageResource(Android.Resource.Drawable.IcMediaPause);
+                        }
                     }
                     _isPlaying = !_isPlaying;
                 };

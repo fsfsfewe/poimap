@@ -3,28 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="15dp"
-    android:background="#FFFFFF"
-    android:layout_marginBottom="10dp">
+    android:padding="12dp"
+    android:background="@drawable/bg_card"
+    android:layout_marginBottom="12dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:elevation="2dp">
 
 	<ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@android:drawable/ic_menu_directions"
-        android:background="#D8B4F8"
-        android:padding="10dp"/>
+        android:id="@+id/imgTourItem"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:background="#D8B4F8"/>
 
 	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="15dp">
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical">
 
 		<TextView
             android:id="@+id/txtTourName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Foodtour Phố Cổ"
+            android:text="Tên Lộ Trình"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#000000"/>
@@ -33,8 +38,42 @@
             android:id="@+id/txtTourDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bao gồm 4 địa điểm ăn uống"
+            android:text="Mô tả ngắn gọn về lộ trình..."
+            android:textSize="13sp"
             android:textColor="#888888"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="4dp"
+            android:maxLines="2"/>
+
+		<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+			<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 giờ"
+                android:textSize="12sp"
+                android:textColor="#555555"
+                android:background="@drawable/bg_tag"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+			<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 điểm"
+                android:textSize="12sp"
+                android:textColor="#555555"
+                android:background="@drawable/bg_tag"
+                android:layout_marginLeft="8dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+		</LinearLayout>
 	</LinearLayout>
 </LinearLayout>

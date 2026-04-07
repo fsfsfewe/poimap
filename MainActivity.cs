@@ -20,9 +20,9 @@ using Android.Content;
 
 namespace poimap
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
     // CHÚ Ý: Đã thêm IOnSuccessListener để app biết cách "nghe" dữ liệu từ mạng
-    public class MainActivity : AppCompatActivity, IOnMapReadyCallback, IOnSuccessListener
+    public class MainActivity : AppCompatActivity, IOnMapReadyCallback, IOnSuccessListener, Android.Locations.ILocationListener
     {
         private GoogleMap? _map;
         private BottomNavigationView? _bottomNavigation;
@@ -48,6 +48,12 @@ namespace poimap
 
         // Dictionary để lưu cặp <Tên quán, Tọa độ> giúp tìm kiếm nhanh
         private Dictionary<string, LatLng> _allShopsDict = new Dictionary<string, LatLng>();
+
+        // --- CÁC BIẾN CHO GEOFENCING (TỰ PHÁT AUDIO) ---
+        private Android.Locations.LocationManager? _locationManager;
+        private Android.Media.MediaPlayer? _autoMediaPlayer;
+        // Danh sách lưu tên các quán ĐÃ PHÁT, để chống việc đứng yên 1 chỗ mà app cứ nói đi nói lại (Giải quyết Slide 1)
+        private List<string> _alreadyPlayedShops = new List<string>();
 
         private const int RequestLocationId = 1;
 
@@ -377,11 +383,24 @@ namespace poimap
                 }
             }
         }
+        private void StartTrackingGPS()
+        {
+            _locationManager = (Android.Locations.LocationManager?)GetSystemService(LocationService);
+            if (_locationManager != null && ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
+            {
+                // Bật Radar: Cập nhật tọa độ mỗi 5 giây (5000ms) hoặc khi người dùng bước đi 2 mét (2f)
+                _locationManager.RequestLocationUpdates(Android.Locations.LocationManager.GpsProvider, 5000, 2f, this);
+            }
+        }
+
+        // --- CẬP NHẬT 2 HÀM CŨ ĐỂ GỌI RADAR ---
         private void CheckAndRequestLocationPermission()
         {
             if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
             {
                 if (_map != null) { _map.MyLocationEnabled = true; _map.UiSettings.MyLocationButtonEnabled = true; }
+                StartTrackingGPS(); // <--- THÊM DÒNG NÀY
+                MoveMyLocationButton();
             }
             else
             {
@@ -389,13 +408,15 @@ namespace poimap
             }
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
-            if (requestCode == RequestLocationId && grantResults.Length > 0 && grantResults[0] == Permission.Granted)
+            if (requestCode == RequestLocationId && grantResults.Length > 0 && grantResults[0] == Android.Content.PM.Permission.Granted)
             {
-                if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
+                if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) == (int)Android.Content.PM.Permission.Granted)
                 {
                     if (_map != null) { _map.MyLocationEnabled = true; _map.UiSettings.MyLocationButtonEnabled = true; }
+                    StartTrackingGPS(); // <--- THÊM DÒNG NÀY
+                    MoveMyLocationButton();
                 }
             }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -525,5 +546,152 @@ namespace poimap
                 RunOnUiThread(() => Android.Widget.Toast.MakeText(this, $"Lỗi App: {ex.Message}", Android.Widget.ToastLength.Long)?.Show());
             }
         }
+        // --- HÀM MỚI: BẮT TÍN HIỆU TỪ TRANG CHI TIẾT TOUR TRUYỀN VỀ ---
+        protected override void OnNewIntent(Intent? intent)
+        {
+            base.OnNewIntent(intent);
+            string? shopToZoom = intent?.GetStringExtra("ZOOM_TO_SHOP");
+
+            if (!string.IsNullOrEmpty(shopToZoom))
+            {
+                // 1. Tự động chuyển Menu dưới đáy về Tab Bản đồ
+                if (_bottomNavigation != null)
+                {
+                    _bottomNavigation.SelectedItemId = Resource.Id.navigation_map;
+                }
+
+                // 2. Tìm tọa độ và bay camera tới quán đó
+                if (_allShopsDict.TryGetValue(shopToZoom, out LatLng targetLocation))
+                {
+                    // Bay tới và phóng to bản đồ
+                    _map?.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(targetLocation, 18f));
+
+                    // Mở luôn cái bong bóng của quán đó lên cho đẹp
+                    foreach (var marker in _markerCategoryDict.Keys)
+                    {
+                        if (marker.Title == shopToZoom)
+                        {
+                            marker.ShowInfoWindow();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        // ====================================================================
+        // PHẦN Geofencing - TỰ ĐỘNG PHÁT AUDIO THEO TỌA ĐỘ BƯỚC CHÂN
+        // ====================================================================
+
+        // Hàm này tự động chạy mỗi khi bạn bước đi (tọa độ GPS thay đổi)
+        public void OnLocationChanged(Android.Locations.Location location)
+        {
+            // Duyệt qua tất cả các quán ăn/bảo tàng đang có trên bản đồ
+            foreach (var shop in _allShopsDict)
+            {
+                string shopName = shop.Key;
+                LatLng shopLatLng = shop.Value;
+
+                // 1. Kiểm tra xem quán này có link Audio không? Nếu không thì bỏ qua
+                if (!_audioUrlsDict.ContainsKey(shopName) || string.IsNullOrEmpty(_audioUrlsDict[shopName]))
+                    continue;
+
+                // 2. Tính khoảng cách từ chỗ bạn đang đứng đến cái quán đó
+                float[] results = new float[1];
+                Android.Locations.Location.DistanceBetween(location.Latitude, location.Longitude, shopLatLng.Latitude, shopLatLng.Longitude, results);
+                float distanceInMeters = results[0];
+
+                // 3. THUẬT TOÁN ĐIỀU KIỆN: Nếu cách DƯỚI 20 MÉT và CHƯA TỪNG PHÁT BÀI NÀY
+                if (distanceInMeters < 20f && !_alreadyPlayedShops.Contains(shopName))
+                {
+                    // Ghi vào sổ đen để không phát lặp lại (Giải quyết yêu cầu Slide 1)
+                    _alreadyPlayedShops.Add(shopName);
+
+                    // Bật nhạc!
+                    PlayAutoAudio(_audioUrlsDict[shopName], shopName);
+
+                    // Tự động mở bong bóng của quán đó lên màn hình cho sinh động
+                    foreach (var marker in _markerCategoryDict.Keys)
+                    {
+                        if (marker.Title == shopName)
+                        {
+                            marker.ShowInfoWindow();
+                            _map?.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(marker.Position, 18f));
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        private Android.Media.AudioManager? _audioManager;
+        private MyAudioFocusListener? _audioFocusListener;
+
+        private void PlayAutoAudio(string url, string shopName)
+        {
+            try
+            {
+                // 1. Dọn dẹp trình phát cũ nếu có
+                if (_autoMediaPlayer != null)
+                {
+                    if (_autoMediaPlayer.IsPlaying) _autoMediaPlayer.Stop();
+                    _autoMediaPlayer.Release();
+                }
+
+                _audioManager = (Android.Media.AudioManager?)GetSystemService(AudioService);
+                _autoMediaPlayer = new Android.Media.MediaPlayer();
+                _audioFocusListener = new MyAudioFocusListener(_autoMediaPlayer); // Giao phó cho Trọng tài
+
+                _autoMediaPlayer.SetDataSource(url);
+                _autoMediaPlayer.PrepareAsync();
+
+                _autoMediaPlayer.Prepared += (s, e) =>
+                {
+                    // 2. TRƯỚC KHI PHÁT: Phải xin quyền "Cầm Micro" từ hệ thống Android
+                    var focusResult = _audioManager?.RequestAudioFocus(_audioFocusListener, Android.Media.Stream.Music, Android.Media.AudioFocus.Gain);
+
+                    if (focusResult == Android.Media.AudioFocusRequest.Granted)
+                    {
+                        _autoMediaPlayer.Start();
+                        Toast.MakeText(this, $"📍 Bạn đã đến {shopName}. Bắt đầu thuyết minh!", ToastLength.Long)?.Show();
+                    }
+                };
+            }
+            catch { }
+        }
+
+        // --- THỦ THUẬT DỜI NÚT TỌA ĐỘ CỦA GOOGLE MAPS ---
+        private void MoveMyLocationButton()
+        {
+            try
+            {
+                // Tìm cái View chứa nút Tọa độ (Google ngầm định ID của nó là số 2)
+                if (_mapFragment?.View != null)
+                {
+                    Android.Views.View? locationButton = ((Android.Views.View)_mapFragment.View.FindViewById(int.Parse("1"))?.Parent)?.FindViewById(int.Parse("2"));
+
+                    if (locationButton != null && locationButton.LayoutParameters is Android.Widget.RelativeLayout.LayoutParams layoutParams)
+                    {
+                        // 1. Gỡ bỏ lệnh ghim lên trên (Top)
+                        layoutParams.AddRule(Android.Widget.LayoutRules.AlignParentTop, 0);
+
+                        // 2. Ép lệnh ghim xuống dưới (Bottom)
+                        layoutParams.AddRule(Android.Widget.LayoutRules.AlignParentBottom, (int)Android.Widget.LayoutRules.True);
+
+                        // 3. Chỉnh khoảng cách so với lề (Cách phải 30px, Cách đáy 250px để chừa chỗ cho 2 cái nút Zoom)
+                        layoutParams.SetMargins(0, 0, 30, 250);
+
+                        locationButton.LayoutParameters = layoutParams;
+                    }
+                }
+            }
+            catch { /* Bỏ qua nếu có lỗi ngầm định */ }
+        }
+
+        // 3 Hàm bắt buộc của giao diện ILocationListener (Chỉ cần để trống)
+        public void OnProviderDisabled(string provider) { }
+        public void OnProviderEnabled(string provider) { }
+        public void OnStatusChanged(string provider, Android.Locations.Availability status, Bundle extras) { }
     }
 }

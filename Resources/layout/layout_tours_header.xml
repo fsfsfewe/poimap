@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#F5F0FF">
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lộ trình tham quan"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khám phá Vĩnh Khánh theo lộ trình của bạn"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"/>
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lộ trình nổi bật"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"/>
+
+	<HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clipToPadding="false">
+
+		<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+			<RelativeLayout
+                android:id="@+id/layoutFeatured1"
+                android:layout_width="260dp"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_card"
+                android:elevation="4dp"
+                android:layout_marginRight="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:clipToOutline="true">
+				<ImageView
+                    android:id="@+id/imgFeatured1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/ic_menu_gallery" />
+
+				<View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66000000" />
+
+				<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NỔI BẬT"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="#008080"
+                    android:padding="5dp"
+                    android:layout_margin="15dp"/>
+				<TextView
+                    android:id="@+id/txtFeaturedTour1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đang tải..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+			</RelativeLayout>
+
+			<RelativeLayout
+			   android:id="@+id/layoutFeatured2"
+			   android:layout_width="260dp"
+			   android:layout_height="180dp"
+			   android:background="@drawable/bg_card"
+			   android:elevation="4dp"
+			   android:layout_marginRight="15dp"
+			   android:clickable="true"
+			   android:focusable="true"
+			   android:clipToOutline="true">
+
+				<ImageView
+                    android:id="@+id/imgFeatured2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/ic_menu_gallery" />
+
+				<View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66000000" />
+
+				<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NỔI BẬT"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="#008080"
+                    android:padding="5dp"
+                    android:layout_margin="15dp"/>
+				<TextView
+                    android:id="@+id/txtFeaturedTour2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đang tải..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+			</RelativeLayout>
+		</LinearLayout>
+	</HorizontalScrollView>
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tất cả lộ trình"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
