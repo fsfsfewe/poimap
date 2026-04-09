@@ -53,7 +53,8 @@ namespace poimap
         private Android.Locations.LocationManager? _locationManager;
         private Android.Media.MediaPlayer? _autoMediaPlayer;
         // Danh sách lưu tên các quán ĐÃ PHÁT, để chống việc đứng yên 1 chỗ mà app cứ nói đi nói lại (Giải quyết Slide 1)
-        private List<string> _alreadyPlayedShops = new List<string>();
+        //private List<string> _alreadyPlayedShops = new List<string>();
+        private string _currentPlayingPoi = "";
 
         private const int RequestLocationId = 1;
 
@@ -253,49 +254,35 @@ namespace poimap
         private void Map_InfoWindowClick(object? sender, GoogleMap.InfoWindowClickEventArgs e)
         {
             var marker = e.Marker;
-            // SỬA THÀNH:
             string category = _shopCategoryByNameDict.ContainsKey(marker.Title) ? _shopCategoryByNameDict[marker.Title] : "restaurant";
 
-            // Tạo một cái Menu popup hỏi người dùng muốn làm gì
             var builder = new Android.App.AlertDialog.Builder(this);
             builder.SetTitle(marker.Title);
 
-            // Tùy theo thể loại quán mà hiện Nút bấm khác nhau
-            List<string> options = new List<string> { "Chỉ đường tới đây" };
+            // Khởi tạo danh sách Menu rỗng, loại bỏ chức năng Chỉ đường
+            List<string> options = new List<string>();
 
             if (category == "museum" || category == "park")
                 options.Add("Nghe Thuyết Minh (Audio)");
             else
                 options.Add("Đánh giá Quán này");
 
-            builder.SetItems(options.ToArray(), async (dialog, args) =>
+            builder.SetItems(options.ToArray(), (dialog, args) =>
             {
                 int choice = args.Which;
-                if (choice == 0) // Chọn Chỉ đường
-                {
-                    Android.Locations.LocationManager? locationManager = (Android.Locations.LocationManager?)GetSystemService(LocationService);
-                    Android.Locations.Location? myLoc = locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.NetworkProvider)
-                                                     ?? locationManager?.GetLastKnownLocation(Android.Locations.LocationManager.GpsProvider);
-                    if (myLoc != null)
-                    {
-                        Toast.MakeText(this, "Đang vẽ đường...", ToastLength.Short)?.Show();
-                        await DrawRouteAsync(new LatLng(myLoc.Latitude, myLoc.Longitude), marker.Position);
-                    }
-                    else Toast.MakeText(this, "Chưa lấy được GPS!", ToastLength.Short)?.Show();
-                }
-                // THAY THẾ KHỐI LỆNH CŨ BẰNG KHỐI NÀY:
-                else if (choice == 1 && options[1].Contains("Audio"))
+                string selectedOption = options[choice];
+
+                if (selectedOption.Contains("Audio"))
                 {
                     Intent intent = new Intent(this, typeof(PoiAudioActivity));
                     intent.PutExtra("POI_NAME", marker.Title);
 
-                    // Tìm xem quán này có link audio trên Firebase không, nếu không có thì dùng link trống
                     string actualAudioUrl = _audioUrlsDict.ContainsKey(marker.Title) ? _audioUrlsDict[marker.Title] : "";
                     intent.PutExtra("AUDIO_URL", actualAudioUrl);
 
                     StartActivity(intent);
                 }
-                else if (choice == 1 && options[1].Contains("Đánh giá")) // Chọn Đánh giá
+                else if (selectedOption.Contains("Đánh giá"))
                 {
                     Intent intent = new Intent(this, typeof(ShopReviewActivity));
                     intent.PutExtra("SHOP_NAME", marker.Title);
@@ -401,6 +388,8 @@ namespace poimap
                 if (_map != null) { _map.MyLocationEnabled = true; _map.UiSettings.MyLocationButtonEnabled = true; }
                 StartTrackingGPS(); // <--- THÊM DÒNG NÀY
                 MoveMyLocationButton();
+
+                ZoomToUserLocation();
             }
             else
             {
@@ -417,6 +406,8 @@ namespace poimap
                     if (_map != null) { _map.MyLocationEnabled = true; _map.UiSettings.MyLocationButtonEnabled = true; }
                     StartTrackingGPS(); // <--- THÊM DÒNG NÀY
                     MoveMyLocationButton();
+
+                    ZoomToUserLocation();
                 }
             }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -585,45 +576,58 @@ namespace poimap
         // Hàm này tự động chạy mỗi khi bạn bước đi (tọa độ GPS thay đổi)
         public void OnLocationChanged(Android.Locations.Location location)
         {
-            // Duyệt qua tất cả các quán ăn/bảo tàng đang có trên bản đồ
+            // ---> CAMERA LUÔN TRÔI THEO BƯỚC CHÂN (CHẾ ĐỘ CHỈ ĐƯỜNG) <---
+            LatLng myCurrentStep = new LatLng(location.Latitude, location.Longitude);
+            _map?.AnimateCamera(CameraUpdateFactory.NewLatLng(myCurrentStep));
+
+            
+            string nearestPoiName = "";
+            float minDistance = 100f; // Đặt bán kính quét tối đa là 100 mét
+
+            // 1. Quét toàn bộ bản đồ để tìm POI GẦN NHẤT trong bán kính 100m
             foreach (var shop in _allShopsDict)
             {
                 string shopName = shop.Key;
                 LatLng shopLatLng = shop.Value;
 
-                // 1. Kiểm tra xem quán này có link Audio không? Nếu không thì bỏ qua
+                // Bỏ qua nếu không có link Audio
                 if (!_audioUrlsDict.ContainsKey(shopName) || string.IsNullOrEmpty(_audioUrlsDict[shopName]))
                     continue;
 
-                // 2. Tính khoảng cách từ chỗ bạn đang đứng đến cái quán đó
                 float[] results = new float[1];
                 Android.Locations.Location.DistanceBetween(location.Latitude, location.Longitude, shopLatLng.Latitude, shopLatLng.Longitude, results);
                 float distanceInMeters = results[0];
 
-                // 3. THUẬT TOÁN ĐIỀU KIỆN: Nếu cách DƯỚI 20 MÉT và CHƯA TỪNG PHÁT BÀI NÀY
-                if (distanceInMeters < 20f && !_alreadyPlayedShops.Contains(shopName))
+                // Nếu điểm này nằm trong bán kính 100m VÀ gần hơn các điểm đã quét trước đó
+                if (distanceInMeters <= minDistance)
                 {
-                    // Ghi vào sổ đen để không phát lặp lại (Giải quyết yêu cầu Slide 1)
-                    _alreadyPlayedShops.Add(shopName);
+                    minDistance = distanceInMeters;
+                    nearestPoiName = shopName;
+                }
+            }
 
-                    // Bật nhạc!
-                    PlayAutoAudio(_audioUrlsDict[shopName], shopName);
+            // 2. Xử lý logic phát Audio
+            // Nếu tìm thấy một POI trong 100m VÀ bạn đang bước vào một khu vực mới (khác với POI đang phát)
+            if (!string.IsNullOrEmpty(nearestPoiName) && nearestPoiName != _currentPlayingPoi)
+            {
+                // Cập nhật lại mốc để không bị phát lặp lại liên tục khi đứng yên
+                _currentPlayingPoi = nearestPoiName;
 
-                    // Tự động mở bong bóng của quán đó lên màn hình cho sinh động
-                    foreach (var marker in _markerCategoryDict.Keys)
+                // Bật nhạc! (Hàm PlayAutoAudio sẽ tự động Stop bài nhạc cũ nếu có)
+                PlayAutoAudio(_audioUrlsDict[nearestPoiName], nearestPoiName);
+
+                // Tự động mở bong bóng của quán đó lên màn hình
+                foreach (var marker in _markerCategoryDict.Keys)
+                {
+                    if (marker.Title == nearestPoiName)
                     {
-                        if (marker.Title == shopName)
-                        {
-                            marker.ShowInfoWindow();
-                            _map?.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(marker.Position, 18f));
-                            break;
-                        }
+                        marker.ShowInfoWindow();
+                        _map?.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(marker.Position, 18f));
+                        break;
                     }
                 }
             }
         }
-
-
 
         private Android.Media.AudioManager? _audioManager;
         private MyAudioFocusListener? _audioFocusListener;

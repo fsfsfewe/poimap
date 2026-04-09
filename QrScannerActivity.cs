@@ -39,7 +39,7 @@ namespace poimap
         // KHI QUÉT THÀNH CÔNG
         public void OnSuccess(Java.Lang.Object? result)
         {
-            
+
 
             // Ép kiểu về Barcode
             Barcode? barcode = result as Barcode;
