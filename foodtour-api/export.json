@@ -1,0 +1,3109 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-04-13T22:16:18Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 729602778,
+      "lat": 10.7279559,
+      "lon": 106.7051543,
+      "tags": {
+        "amenity": "fast_food",
+        "name": "Nhà Hàng Swiss Alps"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1710192560,
+      "lat": 10.7222772,
+      "lon": 106.7128058,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Highlands Coffee",
+        "brand:wikidata": "Q5759361",
+        "cuisine": "coffee_shop;vietnamese",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Highlands Coffee",
+        "name:en": "Highlands Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1997301812,
+      "lat": 10.7245881,
+      "lon": 106.7197193,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "name": "Nhà Hàng Cham Charm"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2295902655,
+      "lat": 10.744303,
+      "lon": 106.690393,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Quán Bún Chay - 13k"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301031645,
+      "lat": 10.7218318,
+      "lon": 106.7122518,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Gloria Jean's",
+        "brand:wikidata": "Q2666365",
+        "cuisine": "coffee_shop",
+        "name": "Gloria Jean's",
+        "official_name": "Gloria Jean's Coffees",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301050718,
+      "lat": 10.721758,
+      "lon": 106.7118871,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Nhà Hàng Tao Li"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301050721,
+      "lat": 10.7249731,
+      "lon": 106.7199337,
+      "tags": {
+        "addr:housenumber": "Tòa Crescent Residence 3, 111",
+        "addr:street": "Đường Tôn Dật Tiên",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Nhà Hàng Yeebo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301060066,
+      "lat": 10.7275634,
+      "lon": 106.7196653,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Nhà Hàng Hoàng Yến"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301060069,
+      "lat": 10.7232127,
+      "lon": 106.7100203,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Phở Hùng"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301060071,
+      "lat": 10.7275927,
+      "lon": 106.7195082,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Nhà Hàng Nhật Bản Tokyo Deli"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301060072,
+      "lat": 10.7219794,
+      "lon": 106.7132979,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Hướng Dương"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301064043,
+      "lat": 10.7223325,
+      "lon": 106.7145425,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nhà Hàng Chả Cá Hà Nội"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301108232,
+      "lat": 10.7252736,
+      "lon": 106.7087703,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "Domino's",
+        "brand:wikidata": "Q839466",
+        "cuisine": "pizza",
+        "name": "Domino's",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2301108233,
+      "lat": 10.7336504,
+      "lon": 106.7082869,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "R2-01",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Đường Số 2",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Izakaya Noboru",
+        "opening_hours": "Mo-Su 11:00-14:00,16:00-03:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2322631160,
+      "lat": 10.7320253,
+      "lon": 106.7058174,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nhà Hàng Âu Lạc Du Brasil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2347525006,
+      "lat": 10.7302921,
+      "lon": 106.7095995,
+      "tags": {
+        "addr:housenumber": "18",
+        "addr:old_housenumber": "S6-1",
+        "addr:street": "Đường Số 6",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/hihitomyum.vn/",
+        "cuisine": "thai",
+        "name": "HiHi TomYum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2347540463,
+      "lat": 10.7276978,
+      "lon": 106.7084534,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Lili Fb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2347543374,
+      "lat": 10.7274975,
+      "lon": 106.7084534,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Quán Cơm Tâm Mộc"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2347555466,
+      "lat": 10.7275224,
+      "lon": 106.7092126,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Quán Mỳ Vằn Thắn"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2347558758,
+      "lat": 10.7266015,
+      "lon": 106.7094512,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Phở Ông Già"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2353060845,
+      "lat": 10.7275502,
+      "lon": 106.7088238,
+      "tags": {
+        "amenity": "fast_food",
+        "cuisine": "chicken",
+        "name": "Nhà Hàng Texas Chicken",
+        "not:brand:wikidata": "Q1089932"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2434813270,
+      "lat": 10.7266275,
+      "lon": 106.7087779,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "Pizza Inn",
+        "brand:wikidata": "Q4118850",
+        "cuisine": "pizza",
+        "name": "Pizza Inn",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2822064033,
+      "lat": 10.7336894,
+      "lon": 106.7086744,
+      "tags": {
+        "addr:housenumber": "47",
+        "addr:street": "Đường Số 2",
+        "amenity": "cafe",
+        "name": "TNT Coffee",
+        "opening_hours": "Mo-Su 06:30-21:30",
+        "phone": "+84703795588"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2933936742,
+      "lat": 10.7293289,
+      "lon": 106.7187498,
+      "tags": {
+        "addr:street": "Nguyễn Văn Linh",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Phuc Long"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2934599643,
+      "lat": 10.7297012,
+      "lon": 106.7218723,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "Cửa Hàng Sushi Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2934601307,
+      "lat": 10.7295097,
+      "lon": 106.7195269,
+      "tags": {
+        "addr:city": "TP HCM",
+        "addr:district": "Quận 7",
+        "addr:street": "Tầng trệt",
+        "amenity": "cafe",
+        "brand": "The Coffee Bean & Tea Leaf",
+        "brand:wikidata": "Q1141384",
+        "brand:wikipedia": "en:The Coffee Bean & Tea Leaf",
+        "cuisine": "coffee_shop",
+        "name": "The Coffee Bean & Tea Leaf",
+        "takeaway": "yes",
+        "website": "https://coffeebean.com.vn"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2936045679,
+      "lat": 10.7358783,
+      "lon": 106.6915593,
+      "tags": {
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Bình Chánh",
+        "addr:housenumber": "78",
+        "addr:postcode": "08",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Đường số 8",
+        "addr:subdistrict": "Bình Hưng",
+        "amenity": "cafe",
+        "cuisine": "Cafe_&_Restaurant",
+        "internet_access": "yes",
+        "name": "Cà Phê & Nhà Hàng IRIS18",
+        "opening_hours": "24/7",
+        "smoking": "separated",
+        "website": "http://iris18.vn/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2954411134,
+      "lat": 10.726534,
+      "lon": 106.720854,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Soho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2954413134,
+      "lat": 10.726223,
+      "lon": 106.72105,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Bamba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2993459233,
+      "lat": 10.7287847,
+      "lon": 106.7203938,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Trung Tâm Tiếng Anh Hội Việt Mỹ - VUS",
+        "name:en": "Vietnamese-US Society English Centre"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3949508830,
+      "lat": 10.7278506,
+      "lon": 106.7185037,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "steak_house",
+        "name": "El Gaucho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4089382204,
+      "lat": 10.74164,
+      "lon": 106.7017062,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "469",
+        "addr:street": "Nguyễn Hữu Thọ",
+        "addr:subdistrict": "Phường Tân Hưng",
+        "amenity": "restaurant",
+        "branch": "Lotte Q7",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "capacity": "100",
+        "cuisine": "pizza",
+        "name": "Pizza Hut",
+        "opening_hours": "10:00 - 22:00",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4089387235,
+      "lat": 10.7297073,
+      "lon": 106.7198694,
+      "tags": {
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "101",
+        "addr:street": "Tôn Dật Tiên",
+        "addr:subdistrict": "Phường Tân Phú",
+        "amenity": "restaurant",
+        "branch": "Cresent mall",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "capacity": "100",
+        "cuisine": "pizza",
+        "delivery": "no",
+        "ele": "5",
+        "name": "Pizza Hut",
+        "opening_hours": "10:00-22:00",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4089388467,
+      "lat": 10.7292804,
+      "lon": 106.7061103,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "S20-1",
+        "addr:street": "Nguyễn Văn Linh",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "branch": "Sky Garden",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "cuisine": "pizza",
+        "delivery": "yes",
+        "name": "Pizza Hut",
+        "opening_hours": "10:00-22:00",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4124862891,
+      "lat": 10.7262831,
+      "lon": 106.7204412,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nhà Hàng Boomerang Bistro Saigon"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4141899390,
+      "lat": 10.7355457,
+      "lon": 106.6933084,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Phương Anh"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4148747989,
+      "lat": 10.7369094,
+      "lon": 106.7073344,
+      "tags": {
+        "addr:housenumber": "Số 4",
+        "addr:street": "Số 59 Tân Quy Đông",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop;tea",
+        "email": "hpv8118@gmail.com",
+        "internet_access": "wlan",
+        "name": "Cà Phê Long Béo",
+        "opening_hours": "Mo-Su 6:00-22:00",
+        "phone": "0934336633",
+        "website": "http://www.facebook.com/cafelongbeo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4235737194,
+      "lat": 10.7261065,
+      "lon": 106.693271,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Cẩm Tú"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4283418190,
+      "lat": 10.7387137,
+      "lon": 106.710201,
+      "tags": {
+        "addr:housenumber": "313",
+        "addr:street": "Đường Nguyễn Thị Thập",
+        "amenity": "cafe",
+        "brand": "The Coffee House",
+        "brand:wikidata": "Q60775742",
+        "brand:wikipedia": "en:The Coffee House (coffeehouse chain)",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "The Coffee House",
+        "name:en": "The Coffee House",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4298738093,
+      "lat": 10.7435037,
+      "lon": 106.6912254,
+      "tags": {
+        "addr:housenumber": "450b/13",
+        "addr:street": "Dương Bá Trạc",
+        "amenity": "cafe",
+        "name": "Cà Phê Demon"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4417115790,
+      "lat": 10.7455491,
+      "lon": 106.7158206,
+      "tags": {
+        "addr:housenumber": "108",
+        "addr:street": "Đường Lâm Văn Bền",
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "name": "Nhà Hàng Song Tân",
+        "name:en": "Song Tan",
+        "name:vi": "Song Tan",
+        "opening_hours": "Mo-Su 06:00-22:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4464257890,
+      "lat": 10.7399582,
+      "lon": 106.702491,
+      "tags": {
+        "addr:street": "Nguyễn Thị Thập",
+        "amenity": "restaurant",
+        "name": "Quán Cơm Tấm Nhớ",
+        "opening_hours": "Mo-Su 09:00-22:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4486209093,
+      "lat": 10.7373058,
+      "lon": 106.6928518,
+      "tags": {
+        "amenity": "cafe",
+        "name": "I Cafe",
+        "name:vi": "I cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4524200989,
+      "lat": 10.7329877,
+      "lon": 106.708305,
+      "tags": {
+        "addr:housenumber": "50",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "Gangnam BBQ House",
+        "name:ko": "강남비비큐",
+        "name:zh": "江南韓式烤肉",
+        "opening_hours": "Mo-Fr 11:00-14:00,16:00-22:00; Sa-Su 11:00-22:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4551754290,
+      "lat": 10.7392767,
+      "lon": 106.7085733,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Quán Lẩu Dê 4.4",
+        "name:vi": "lẩu dê 4.4"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4583492089,
+      "lat": 10.7390872,
+      "lon": 106.7084294,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "Lotteria",
+        "brand:wikidata": "Q249525",
+        "cuisine": "burger",
+        "name": "Lotteria",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4686804617,
+      "lat": 10.7315659,
+      "lon": 106.715633,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Pizza 4P's - Phú Mỹ Hưng",
+        "name:ko": "피자 4P's"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4813394821,
+      "lat": 10.7217611,
+      "lon": 106.7117627,
+      "tags": {
+        "amenity": "bar",
+        "name:en": "Lac Brewing",
+        "opening_hours": "Mo-Su 15:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4813623621,
+      "lat": 10.7382968,
+      "lon": 106.7152145,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "The Coffee House",
+        "brand:wikidata": "Q60775742",
+        "brand:wikipedia": "en:The Coffee House (coffeehouse chain)",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "The Coffee House",
+        "name:en": "The Coffee House",
+        "name:vi": "The Coffee House 313 Ng Thị Thập",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4855397350,
+      "lat": 10.7336048,
+      "lon": 106.7065132,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "S84-1",
+        "addr:street": "Phạm Văn Nghị",
+        "addr:subdistrict": "Tan Phong",
+        "amenity": "restaurant",
+        "cuisine": "chinese;hotpot",
+        "name": "Nhà Hàng Huo Cuo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4855417146,
+      "lat": 10.7302076,
+      "lon": 106.7078529,
+      "tags": {
+        "addr:district": "Quận 7",
+        "addr:housenumber": "54",
+        "addr:street": "Đường Số 6",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "description": "Fine Indian cuisine",
+        "description:vi": "Ẩm thực Ấn Độ tinh tế",
+        "diet:halal": "yes",
+        "name": "Ganesh",
+        "opening_hours": "Mo-Su 10:30-14:15,17:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4855417147,
+      "lat": 10.7293411,
+      "lon": 106.7089901,
+      "tags": {
+        "addr:housenumber": "950",
+        "addr:street": "Nguyễn Văn Linh",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/kadohachivn",
+        "cuisine": "japanese",
+        "name": "Kadohachi",
+        "name:ja": "かどはち",
+        "opening_hours": "Mo-Fr 11:30-14:00,17:00-22:00; Sa-Su 11:30-22:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4855451452,
+      "lat": 10.7293374,
+      "lon": 106.7087772,
+      "tags": {
+        "addr:housenumber": "23",
+        "addr:street": "Bùi Bằng Đoàn",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "name": "Nathalie's",
+        "opening_hours": "07:00-23:00",
+        "website": "http://www.nathalie.com.vn/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4855522205,
+      "lat": 10.728136,
+      "lon": 106.7088279,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Katinat"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4855542417,
+      "lat": 10.7332154,
+      "lon": 106.7086786,
+      "tags": {
+        "addr:housenumber": "47",
+        "addr:street": "Bùi Bằng Đoàn",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "RIO Restaurant",
+        "opening_hours": "Mo-Su 09:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4861414898,
+      "lat": 10.7327247,
+      "lon": 106.7086924,
+      "tags": {
+        "addr:housenumber": "47",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "name": "The Tavern"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4861414900,
+      "lat": 10.7311345,
+      "lon": 106.7080431,
+      "tags": {
+        "addr:housenumber": "60",
+        "addr:street": "Lê Văn Thiêm",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "바다",
+        "name:en": "Ba Da",
+        "name:vi": "Ba Da",
+        "opening_hours": "Mo-Sa 11:00-22:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4861414901,
+      "lat": 10.7311335,
+      "lon": 106.7079336,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "64",
+        "addr:street": "Lê Văn Thiêm",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "불막열삼",
+        "name:en": "Bulmakyeolsam",
+        "name:vi": "Bulmakyeolsam",
+        "opening_hours": "Mo-Sa 15:00-00:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4869372313,
+      "lat": 10.7325567,
+      "lon": 106.7102193,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "R1-49",
+        "addr:street": "Nội Khu Hưng Gia 3",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "Samwon",
+        "name:ko": "삼원"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4883409088,
+      "lat": 10.7304964,
+      "lon": 106.7083692,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "1",
+        "addr:street": "Nội Khu Hưng Phước 3",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "description": "Tinh Hoa Ẩm Thực Huế",
+        "description:en": "The Essence of Hue Cuisine",
+        "name": "O Tem",
+        "opening_hours": "Mo-Fr 11:00-21:00; Sa-Su 10:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4883765814,
+      "lat": 10.7320865,
+      "lon": 106.7087161,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "48",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Cao Triều Phát",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "Woo Mong",
+        "name:ko": "우몽"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4934180221,
+      "lat": 10.7277914,
+      "lon": 106.7105143,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Quán Ăn An Ký"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4957003922,
+      "lat": 10.7392419,
+      "lon": 106.6913389,
+      "tags": {
+        "addr:housenumber": "39",
+        "addr:street": "Bình Thái",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Quán Bún Đậu Nhà Tôi 2",
+        "phone": "0936544159"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4960018721,
+      "lat": 10.739051,
+      "lon": 106.690432,
+      "tags": {
+        "addr:housenumber": "39",
+        "addr:street": "Bình Thái",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Quán Bún Đậu Nhà Tôi 2",
+        "name:vi": "Quán BÚN ĐẬU NHÀ TÔI (2)",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "phone": "0936544159"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4974413221,
+      "lat": 10.7380857,
+      "lon": 106.6921318,
+      "tags": {
+        "addr:street": "Đường 1C",
+        "amenity": "cafe",
+        "name": "Cà Phê Thảo Nguyên",
+        "name:vi": "Thảo Nguyên"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4996330630,
+      "lat": 10.7369767,
+      "lon": 106.7172674,
+      "tags": {
+        "addr:street": "Số 1",
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5320174722,
+      "lat": 10.7401407,
+      "lon": 106.7098338,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Quán Rắn Hương Phù Sa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5690387622,
+      "lat": 10.7254777,
+      "lon": 106.7092096,
+      "tags": {
+        "addr:housenumber": "H19-2B Parkview",
+        "addr:street": "Đặng Đức Thuật",
+        "amenity": "restaurant",
+        "name": "Quán Hủ Tiếu Nam Vang",
+        "name:en": "Cambodian Noodle",
+        "name:vi": "Hủ tiếu Nam Vang Thuỳ Dung",
+        "phone": "0854121260"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5690493321,
+      "lat": 10.7292807,
+      "lon": 106.7069753,
+      "tags": {
+        "addr:housenumber": "998",
+        "addr:street": "Nguyễn Văn Linh",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Vua Ngỗng Quay Hong Kong",
+        "name:zh-Hant": "香港燒鵝大王",
+        "opening_hours": "Mo-Su 10:00-22:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5777155846,
+      "lat": 10.7388551,
+      "lon": 106.7111366,
+      "tags": {
+        "amenity": "restaurant",
+        "capacity": "100",
+        "cuisine": "vietnamese",
+        "delivery": "no",
+        "name": "Quán Ăn Tam Kỳ",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6094866785,
+      "lat": 10.7318815,
+      "lon": 106.7095923,
+      "tags": {
+        "addr:housenumber": "23",
+        "addr:street": "Cao Triều Phát",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/comnieuthienly/",
+        "cuisine": "vietnamese",
+        "name": "Cơm Niêu Thiên Lý",
+        "opening_hours": "10:00-21:30",
+        "operator": "Cơm Niêu Thiên Lý",
+        "phone": "+84978785500",
+        "website": "https://comnieuthienly.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6404597285,
+      "lat": 10.7403845,
+      "lon": 106.7049397,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6715402685,
+      "lat": 10.7300369,
+      "lon": 106.7100951,
+      "tags": {
+        "addr:housenumber": "E008",
+        "addr:street": "Đường Số 6",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Lươn Đồng Xứ Nghệ",
+        "opening_hours": "Mo-Su 07:00-19:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6772838819,
+      "lat": 10.7468303,
+      "lon": 106.7157948,
+      "tags": {
+        "addr:housenumber": "88",
+        "addr:street": "Đường Lâm Văn Bền",
+        "amenity": "cafe",
+        "name": "Cà Phê Ribi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6773110261,
+      "lat": 10.7410256,
+      "lon": 106.7159611,
+      "tags": {
+        "addr:street": "Đường Lâm Văn Bền",
+        "amenity": "cafe",
+        "name": "Cà Phê The Coffee Tea"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6773110267,
+      "lat": 10.7438743,
+      "lon": 106.7159584,
+      "tags": {
+        "addr:housenumber": "195",
+        "addr:street": "Đường Lâm Văn Bền",
+        "amenity": "cafe",
+        "name": "Cà Phê Mạnh"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6777683383,
+      "lat": 10.7414776,
+      "lon": 106.7157948,
+      "tags": {
+        "addr:street": "Đường Lâm Văn Bền",
+        "amenity": "cafe",
+        "brand": "Highlands Coffee",
+        "brand:wikidata": "Q5759361",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "Highlands Coffee",
+        "name:en": "Highlands Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6777711088,
+      "lat": 10.7435805,
+      "lon": 106.7157908,
+      "tags": {
+        "addr:street": "Đường Lâm Văn Bền",
+        "amenity": "cafe",
+        "name": "Cà Phê Du Mục"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6778235810,
+      "lat": 10.7439929,
+      "lon": 106.7137764,
+      "tags": {
+        "addr:street": "Đường Mai Văn Vĩnh",
+        "amenity": "cafe",
+        "name": "Cà Phê Richy"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6783826303,
+      "lat": 10.7480366,
+      "lon": 106.7102024,
+      "tags": {
+        "addr:street": "Đường số 10",
+        "amenity": "cafe",
+        "name": "Cà Phê Steven"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6783862319,
+      "lat": 10.7443177,
+      "lon": 106.7139689,
+      "tags": {
+        "addr:street": "Đường Số 37",
+        "amenity": "cafe",
+        "name": "Cà Phê Tươi Ngọc"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6786309851,
+      "lat": 10.7399926,
+      "lon": 106.7098001,
+      "tags": {
+        "addr:housenumber": "83",
+        "addr:street": "Đường số 10",
+        "amenity": "cafe",
+        "name": "Cà Phê Acoustic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6789105447,
+      "lat": 10.7438084,
+      "lon": 106.7041245,
+      "tags": {
+        "addr:housenumber": "234",
+        "addr:street": "Đường Lê Văn Lương",
+        "amenity": "cafe",
+        "name": "Cà Phê Sala"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6789163195,
+      "lat": 10.7494016,
+      "lon": 106.7048936,
+      "tags": {
+        "addr:housenumber": "98",
+        "addr:street": "Đường Lê Văn Lương",
+        "amenity": "restaurant",
+        "name": "Quán Cơm 98"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7003724795,
+      "lat": 10.7427473,
+      "lon": 106.7041679,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Phở Chùa Lạng Sơn"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7017888850,
+      "lat": 10.7240083,
+      "lon": 106.7089121,
+      "tags": {
+        "addr:district": "Quận 7",
+        "addr:housenumber": "133",
+        "addr:street": "Nguyễn Đức Cảnh",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Shamoji Robata Yaki"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7144539506,
+      "lat": 10.7282553,
+      "lon": 106.7183252,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nhà Hàng 48 Bistro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7820749385,
+      "lat": 10.7290473,
+      "lon": 106.7185546,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Cộng Cà Phê",
+        "brand:wikidata": "Q63864181",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "Cộng Cà Phê",
+        "name:vi": "Cộng Cà Phê",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7934391903,
+      "lat": 10.7405616,
+      "lon": 106.6990024,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "31-33 Khu Him Lam Khu Him Lam",
+        "addr:street": "Đường Nguyễn Thị Thập",
+        "addr:subdistrict": "Tân Hưng",
+        "amenity": "restaurant",
+        "name": "Nhà hàng Tokyo Deli"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8038710285,
+      "lat": 10.7490431,
+      "lon": 106.7055903,
+      "tags": {
+        "addr:housenumber": "147/3",
+        "addr:street": "Đường Lê Văn Lương",
+        "amenity": "cafe",
+        "name": "Cà Phê Rino Aquarium",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8308532989,
+      "lat": 10.7419361,
+      "lon": 106.7099978,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "7",
+        "addr:housenumber": "1B",
+        "addr:street": "Đường số 10",
+        "addr:subdistrict": "Tan Quy",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "diet:meat": "yes",
+        "name": "Bún Đậu 3 Nàng"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9584673033,
+      "lat": 10.7423839,
+      "lon": 106.6895503,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Quán Làng Ốc - Dương Bá Trạc"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9585162929,
+      "lat": 10.7468774,
+      "lon": 106.7011838,
+      "tags": {
+        "addr:city": "Thành phố Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:street": "Hẻm 793/57 Trần Xuân Soạn",
+        "addr:subdistrict": "Tân Hưng",
+        "amenity": "restaurant",
+        "name": "Nhà hàng Maison de Charme"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9585162930,
+      "lat": 10.7446631,
+      "lon": 106.7013895,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nhà Hàng Hương Lúa 8"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9586883312,
+      "lat": 10.7328078,
+      "lon": 106.6891196,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Starbucks Coffee - Chung cư Saigon Mia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587171473,
+      "lat": 10.7251605,
+      "lon": 106.7081926,
+      "tags": {
+        "addr:street": "Đường Đặng Đức Thuật",
+        "amenity": "cafe",
+        "check_date": "2026-03-04",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "name": "Starbucks Coffee - Riverpark Premier",
+        "website": "https://www.starbucks.vn/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587268690,
+      "lat": 10.7324066,
+      "lon": 106.7065335,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Phuc Long - Sky Garden"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587268691,
+      "lat": 10.7335462,
+      "lon": 106.7065274,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cửa hàng Bánh Aceline Bakery"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587268692,
+      "lat": 10.7297387,
+      "lon": 106.7039124,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "brand:wikipedia": "en:Starbucks",
+        "cuisine": "coffee_shop",
+        "name": "Starbucks",
+        "official_name": "Starbucks Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587268696,
+      "lat": 10.7300388,
+      "lon": 106.7066065,
+      "tags": {
+        "addr:housenumber": "70",
+        "addr:street": "Phạm Văn Nghị",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/bobaeviet/",
+        "cuisine": "korean;chinese",
+        "name": "Bảo Vật",
+        "name:ko": "보배반점",
+        "opening_hours": "11:00-22:00",
+        "phone": "+84333290019"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587329644,
+      "lat": 10.7448271,
+      "lon": 106.7014673,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Quán Bia Sệt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587486340,
+      "lat": 10.7355599,
+      "lon": 106.7060968,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Hàng Dương Quán"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587536836,
+      "lat": 10.7387208,
+      "lon": 106.6899942,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "BOSS Restaurant & KTV"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587618725,
+      "lat": 10.7318839,
+      "lon": 106.7191567,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Thiên Sơn Plaza"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9589471576,
+      "lat": 10.737376,
+      "lon": 106.7030139,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Bún Cá Kiên Giang Hủ Tiếu Nam Vang"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9589471583,
+      "lat": 10.7398853,
+      "lon": 106.7031373,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Katinat Nguyễn Thị Thập"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9731342317,
+      "lat": 10.7403775,
+      "lon": 106.7076837,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "lương cay"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9736186750,
+      "lat": 10.7293421,
+      "lon": 106.709627,
+      "tags": {
+        "addr:housenumber": "B011",
+        "addr:street": "Nguyễn Văn Linh",
+        "amenity": "cafe",
+        "name": "Half Past Six",
+        "website": "https://www.halfpastsixcoffee.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10727103900,
+      "lat": 10.7296875,
+      "lon": 106.6945669,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Highlands Coffee",
+        "brand:wikidata": "Q5759361",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "Highlands Coffee",
+        "name:en": "Highlands Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10727103901,
+      "lat": 10.7296309,
+      "lon": 106.692409,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Sorrento Restaurant & Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10727103903,
+      "lat": 10.7296861,
+      "lon": 106.6935572,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nine restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10749959495,
+      "lat": 10.7327509,
+      "lon": 106.6971002,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "StepUp Coffee Shop",
+        "opening_hours": "Mo-Su 06:30-22:30",
+        "operator": "Trường Đại học Tôn Đức Thắng",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10750591447,
+      "lat": 10.7301307,
+      "lon": 106.7223018,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Highlands Coffee",
+        "brand:wikidata": "Q5759361",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "Highlands Coffee",
+        "name:en": "Highlands Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10768400642,
+      "lat": 10.7222463,
+      "lon": 106.7040534,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Bánh cuốn Gạo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10768400643,
+      "lat": 10.7221433,
+      "lon": 106.7040654,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Em Là Nem"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10768400644,
+      "lat": 10.7228983,
+      "lon": 106.7039823,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "bubble_tea",
+        "name": "Easy Life Milk Tea"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10768400645,
+      "lat": 10.7232568,
+      "lon": 106.7039089,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Kimbap Brothers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10768400646,
+      "lat": 10.7234804,
+      "lon": 106.7038764,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Street fruit"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10773212160,
+      "lat": 10.7296017,
+      "lon": 106.7036487,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10773212162,
+      "lat": 10.7295927,
+      "lon": 106.7025124,
+      "tags": {
+        "alt_name": "Marugame Seimen",
+        "amenity": "fast_food",
+        "brand": "Marugame Seimen",
+        "brand:wikidata": "Q10877253",
+        "cuisine": "noodle",
+        "name": "Marugame Udon",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10794819160,
+      "lat": 10.7280357,
+      "lon": 106.7187213,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "cuisine": "coffee_shop",
+        "name": "Starbucks Crescent Trip",
+        "official_name": "Starbucks Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10794829523,
+      "lat": 10.7292045,
+      "lon": 106.7186396,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "Dairy Queen",
+        "brand:wikidata": "Q1141226",
+        "cuisine": "ice_cream;burger",
+        "name": "Dairy Queen",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10794829526,
+      "lat": 10.7281874,
+      "lon": 106.7182205,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Highlands Coffee",
+        "brand:wikidata": "Q5759361",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "Highlands Coffee",
+        "name:en": "Highlands Coffee",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10880445575,
+      "lat": 10.7310187,
+      "lon": 106.7237816,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11037465980,
+      "lat": 10.7225348,
+      "lon": 106.7104308,
+      "tags": {
+        "addr:city": "Phường Tân Phong",
+        "addr:country": "VN",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "Số 153/3 (SD3-2) & 153/4 (SD4-2)",
+        "addr:postcode": "70000",
+        "addr:province": "hồ chí minh",
+        "addr:street": "Đường Nguyễn Đức Cảnh",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "cafe",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=100092729116695",
+        "cuisine": "dessert;coffee",
+        "delivery": "yes",
+        "internet_access": "yes",
+        "internet_access:fee": "yes",
+        "level": "1",
+        "name": "RoLu Cookies & Cakes",
+        "opening_hours": "Mo-Sa 09:00-18:00",
+        "phone": "0865965294",
+        "takeaway": "yes",
+        "website": "https://instagram.com/rolu.cookiescakes?igshid=OGQ5ZDc2ODk2ZA=="
+      }
+    },
+    {
+      "type": "node",
+      "id": 11348772192,
+      "lat": 10.7274904,
+      "lon": 106.7103102,
+      "tags": {
+        "addr:city": "Tp. Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "202",
+        "addr:street": "Phạm Thái Bường",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "Détour"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11348772193,
+      "lat": 10.727468,
+      "lon": 106.7099326,
+      "tags": {
+        "addr:city": "Tp. Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "208",
+        "addr:street": "Phạm Thái Bường",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "cafe",
+        "name": "Si Cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11348772194,
+      "lat": 10.7274573,
+      "lon": 106.7095431,
+      "tags": {
+        "addr:city": "Tp. Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "216",
+        "addr:street": "Phạm Thái Bường",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Cô Ba Vũng Tàu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11348772196,
+      "lat": 10.7282651,
+      "lon": 106.710125,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "Mì lạnh Yoo Chun"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11360195064,
+      "lat": 10.7241458,
+      "lon": 106.7088935,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "diet:meat": "yes",
+        "name": "Yukdaejang"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11360195065,
+      "lat": 10.7239838,
+      "lon": 106.7089278,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Kohi Coffee"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11513546708,
+      "lat": 10.7218907,
+      "lon": 106.7131977,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "189-191",
+        "addr:postcode": "700000",
+        "addr:street": "Đường Tôn Dật Tiên",
+        "addr:subdistrict": "Phú Mỹ Hưng",
+        "air_conditioning": "yes",
+        "amenity": "cafe",
+        "contact:facebook": "https://facebook.com/RavieCafeBoutique",
+        "cuisine": "coffee_shop",
+        "email": "ravie.saigon@gmail.com",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:ssid": "Ravie_CafeBoutique",
+        "name": "Ravie Cafe Boutique",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+84832189191",
+        "website": "https://facebook.com/RavieCafeBoutique"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11533096018,
+      "lat": 10.7327885,
+      "lon": 106.7091598,
+      "tags": {
+        "addr:housenumber": "31",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "bar",
+        "name": "Sarang",
+        "name:ko": "사랑"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11533096019,
+      "lat": 10.7363783,
+      "lon": 106.7072975,
+      "tags": {
+        "amenity": "bar",
+        "name": "Pallet House"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11533096021,
+      "lat": 10.7368204,
+      "lon": 106.7078392,
+      "tags": {
+        "amenity": "bar",
+        "name": "Bia Góc"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11533096022,
+      "lat": 10.7366265,
+      "lon": 106.7088936,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Bia Góc"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11569129243,
+      "lat": 10.7354515,
+      "lon": 106.7183717,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Bún chả Hà Nội Minh Nga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11634466268,
+      "lat": 10.7393725,
+      "lon": 106.7055365,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Lau Tu Chon Hong Kong"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12061625089,
+      "lat": 10.7281671,
+      "lon": 106.7180317,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Sushi Hokkaido Sachi - Crescent mall"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12151135569,
+      "lat": 10.7339494,
+      "lon": 106.7102979,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "R4-02",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Hưng Gia 5",
+        "addr:subdistrict": "Tân Phong",
+        "air_conditioning": "yes",
+        "amenity": "cafe",
+        "branch": "Phu My Hung",
+        "contact:facebook": "https://www.facebook.com/100054304429397",
+        "cuisine": "coffee_shop;regional;italian;japanese;asian;american;vietnamese;international;tea;juice;bistro",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Nam Sơn Coffee",
+        "name:vi": "Cà Phê Nam Sơn",
+        "opening_hours": "Mo-Su 06:00-18:00",
+        "organic": "yes",
+        "outdoor_seating": "yes",
+        "phone": "+84931336368",
+        "start_date": "2015-09-09",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "website": "https://namsoncoffee.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12386032943,
+      "lat": 10.7276042,
+      "lon": 106.7124529,
+      "tags": {
+        "amenity": "restaurant",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "An Vegetarian",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12387540881,
+      "lat": 10.7334461,
+      "lon": 106.7093169,
+      "tags": {
+        "addr:housenumber": "26-28",
+        "addr:street": "Nội Khu Hưng Gia 1",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Amavi Kom & Vegan",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12387835741,
+      "lat": 10.7246737,
+      "lon": 106.7093819,
+      "tags": {
+        "amenity": "restaurant",
+        "diet:vegan": "only",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Đóa Sen Vàng",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12387995325,
+      "lat": 10.7243567,
+      "lon": 106.7096936,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Flatto"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12388000235,
+      "lat": 10.7262263,
+      "lon": 106.7087537,
+      "tags": {
+        "amenity": "fast_food",
+        "cuisine": "pizza",
+        "name": "The Pizza Company"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12388021209,
+      "lat": 10.7281893,
+      "lon": 106.7120543,
+      "tags": {
+        "addr:street": "Nguyễn Văn Linh",
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "check_date": "2026-03-04",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "name": "Starbucks",
+        "official_name": "Starbucks Coffee",
+        "takeaway": "yes",
+        "website": "https://www.starbucks.vn/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12543126094,
+      "lat": 10.7269011,
+      "lon": 106.708847,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "55",
+        "addr:street": "Nguyễn Đức Cảnh",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "fast_food",
+        "check_date": "2025-01-30",
+        "cuisine": "sandwich",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Bánh Mì 362",
+        "website": "https://ww.banhmi362.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12546104127,
+      "lat": 10.7252921,
+      "lon": 106.7098322,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "13",
+        "addr:street": "Đường Đặng Đức Thuật",
+        "addr:subdistrict": "Phường Tân Phong",
+        "air_conditioning": "yes",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop;brunch",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "À La Main",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:unisex": "yes",
+        "toilets:wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12548062133,
+      "lat": 10.7329873,
+      "lon": 106.7072123,
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "82",
+        "addr:street": "Phan Khiêm Ích",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "전주옥",
+        "name:ko-Latn": "Jeon Joo Oak"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12566208271,
+      "lat": 10.7314663,
+      "lon": 106.7100508,
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:street": "Nội Khu Hưng Phước 1",
+        "amenity": "cafe",
+        "cuisine": "vietnamese;coffee_shop",
+        "name": "Nhà Phan - Cafe & Bánh Mì"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12566217388,
+      "lat": 10.7306965,
+      "lon": 106.7065862,
+      "tags": {
+        "addr:housenumber": "S46-1",
+        "addr:street": "Phạm Văn Nghị",
+        "amenity": "restaurant",
+        "check_date": "2025-02-08",
+        "cuisine": "burger",
+        "name": "Wau Burger",
+        "name:ko": "와우 버거",
+        "operator": "Wau Haus"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12581969796,
+      "lat": 10.7434281,
+      "lon": 106.7134502,
+      "tags": {
+        "addr:city": "Phường Tân Quy",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "91",
+        "addr:postcode": "72900",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Đường Số 41",
+        "addr:subdistrict": "Phường Tân Quy",
+        "amenity": "cafe",
+        "cuisine": "bubble_tea",
+        "delivery": "yes",
+        "name": "hailanh.mtch - Matcha & More",
+        "phone": "0971862972",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12690167910,
+      "lat": 10.7491632,
+      "lon": 106.6884653,
+      "tags": {
+        "air_conditioning": "no",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Nhuận Liên Hương",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12712428982,
+      "lat": 10.7473634,
+      "lon": 106.7227913,
+      "tags": {
+        "addr:housenumber": "107",
+        "addr:street": "Nguyễn Văn Linh",
+        "amenity": "cafe",
+        "branch": "Eco Green",
+        "check_date": "2025-03-30",
+        "cuisine": "coffee_shop",
+        "name": "Walya Coffee",
+        "opening_hours": "06:30-22:30",
+        "website": "https://walyacoffee.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12712428983,
+      "lat": 10.7327754,
+      "lon": 106.7088313,
+      "tags": {
+        "addr:housenumber": "43",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "restaurant",
+        "check_date": "2025-03-30",
+        "cuisine": "indian",
+        "name": "Agra Mahal",
+        "opening_hours": "10:30-22:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12712428984,
+      "lat": 10.7302924,
+      "lon": 106.7068667,
+      "tags": {
+        "addr:housenumber": "82",
+        "addr:street": "Đường Số 6",
+        "amenity": "restaurant",
+        "check_date": "2025-03-30",
+        "cuisine": "vietnamese",
+        "name": "Bún Bò Huế Ánh Sen"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12712428985,
+      "lat": 10.7311942,
+      "lon": 106.7100658,
+      "tags": {
+        "addr:housenumber": "8",
+        "addr:street": "Lê Văn Thiêm",
+        "amenity": "cafe",
+        "check_date": "2025-03-30",
+        "cuisine": "coffee_shop",
+        "name": "Sumatra Coffee"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12747522762,
+      "lat": 10.7355928,
+      "lon": 106.6931855,
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:street": "Đường số 8",
+        "amenity": "restaurant",
+        "check_date": "2025-04-11",
+        "cuisine": "vietnamese",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Bưu Niệm",
+        "outdoor_seating": "parklet",
+        "phone": "+84973159199",
+        "smoking": "no",
+        "website": "https://amthucchaybuuniem.com",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12771884561,
+      "lat": 10.7493822,
+      "lon": 106.7050557,
+      "tags": {
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "cuisine": "sushi;japanese",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Nhà Hàng Sushi Chay Tojy",
+        "outdoor_seating": "no",
+        "phone": "+84898773562",
+        "smoking": "no",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12839983191,
+      "lat": 10.7280924,
+      "lon": 106.7069926,
+      "tags": {
+        "addr:district": "Quận 7",
+        "addr:housenumber": "1440",
+        "addr:street": "Nguyễn Văn Linh",
+        "addr:subdistrict": "Phường Tân Phong",
+        "amenity": "cafe",
+        "indoor_seating": "yes",
+        "internet_access": "yes",
+        "internet_access:fee": "no",
+        "name": "Dolphy Café",
+        "opening_hours": "06:00-22:00",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12970470401,
+      "lat": 10.7329123,
+      "lon": 106.7066181,
+      "tags": {
+        "addr:housenumber": "24",
+        "addr:street": "Phạm Văn Nghị",
+        "amenity": "restaurant",
+        "name": "Bún Đậu Homemade"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13235977801,
+      "lat": 10.7468863,
+      "lon": 106.7101619,
+      "tags": {
+        "addr:housenumber": "32",
+        "addr:street": "Đường số 10",
+        "amenity": "restaurant",
+        "cuisine": "beef_bowl;noodles;vietnamese",
+        "name": "O Hạnh beef noodle",
+        "name:vi": "Bún bò Huế O Hạnh",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13310873239,
+      "lat": 10.7383625,
+      "lon": 106.6962144,
+      "tags": {
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "diet:gluten_free": "yes",
+        "diet:halal": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Ẩm Thực Chay Visatra",
+        "outdoor_seating": "no",
+        "phone": "+84929457878",
+        "smoking": "no",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13417881337,
+      "lat": 10.742641,
+      "lon": 106.7039656,
+      "tags": {
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "cuisine": "vietnamese",
+        "diet:gluten_free": "yes",
+        "diet:halal": "only",
+        "diet:vegan": "only",
+        "diet:vegetarian": "only",
+        "indoor_seating": "yes",
+        "name": "Nhà Hàng Chay Nấm Thiên Đàng",
+        "opening_hours": "Mo-Su 09:00-14:00,16:00-21:00",
+        "outdoor_seating": "no",
+        "phone": "+842866713777",
+        "smoking": "no",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13618053201,
+      "lat": 10.7309334,
+      "lon": 106.7087217,
+      "tags": {
+        "addr:housenumber": "Hưng Vượng 2",
+        "addr:street": "Bùi Bằng Đoàn",
+        "amenity": "restaurant",
+        "check_date": "2026-03-04",
+        "cuisine": "vietnamese",
+        "name": "Phở Việt Nam",
+        "phone": "+84909 297 400"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13618095901,
+      "lat": 10.7269412,
+      "lon": 106.7088351,
+      "tags": {
+        "addr:street": "Nguyễn Đức Cảnh",
+        "amenity": "restaurant",
+        "check_date": "2026-03-04",
+        "cuisine": "vietnamese",
+        "internet_access": "wlan",
+        "name": "Phở SOL"
+      }
+    },
+    {
+      "type": "way",
+      "id": 188114201,
+      "nodes": [
+        1987339085,
+        1987338491,
+        1987340052,
+        1987339341,
+        1987339085
+      ],
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "building:levels": "15",
+        "cuisine": "chinese",
+        "name": "Shang Garden"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1042578069,
+      "nodes": [
+        9596922004,
+        4869085328,
+        12497451951,
+        12497451927,
+        9596909192,
+        12497451936,
+        12497451933,
+        9596922004
+      ],
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "43-45",
+        "addr:street": "Lê Văn Thiêm",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant;karaoke",
+        "building": "yes",
+        "cuisine": "vietnamese",
+        "name": "Hoàng Triều Entertainment",
+        "name:en": "Hoang Trieu Entertainment",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1042587251,
+      "nodes": [
+        9597008231,
+        4859724750,
+        12563427635,
+        12563427636,
+        9597008231
+      ],
+      "tags": {
+        "addr:housenumber": "R4-28-29",
+        "addr:street": "Lê Văn Thiêm",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "chinese",
+        "name": "BOSS 양꼬치",
+        "name:en": "BOSS Lamb Skewer BBQ",
+        "name:vi": "BOSS Cừu xiên nướng BBQ",
+        "name:zh-Hans": "BOSS 东北烧烤",
+        "opening_hours": "15:00-01:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1046157996,
+      "nodes": [
+        12485022911,
+        12485022933,
+        12485022934,
+        12485022922,
+        12485022911
+      ],
+      "tags": {
+        "addr:housenumber": "87-89",
+        "addr:street": "Cao Triều Phát",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "korean",
+        "name": "샤브 앤 쭈갑골",
+        "name:en": "Shabu & Grill",
+        "name:vi": "Shabu & Grill",
+        "opening_hours": "Mo-Su 11:00-23:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1225004345,
+      "nodes": [
+        11360195051,
+        11360195052,
+        11360195053,
+        11360195054,
+        11360195051
+      ],
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "ramen",
+        "name": "Ippudo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1349246126,
+      "nodes": [
+        12484323045,
+        12484323046,
+        12484323051,
+        12484323050,
+        12484323045
+      ],
+      "tags": {
+        "addr:housenumber": "8-10",
+        "addr:street": "Nội Khu Hưng Gia 4",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "korean",
+        "name": "Sukdon BBQ",
+        "name:ko": "숙돈",
+        "opening_hours": "Mo-Su 11:00-22:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1349541583,
+      "nodes": [
+        12484323044,
+        12484323065,
+        12484323062,
+        12484323039,
+        12484323044
+      ],
+      "tags": {
+        "addr:housenumber": "67-69",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "korean",
+        "description": "60 năm canh thịt bò truyền thống",
+        "description:ko": "60년 전통 소고기 국밥",
+        "name": "안동국밥",
+        "name:en": "Andong Gukbap",
+        "name:vi": "Andong Gukbap",
+        "opening_hours": "Mo-Su 08:00-14:00,16:00-22:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1349848107,
+      "nodes": [
+        12487128939,
+        12487128941,
+        12487128940,
+        9587268693,
+        12487128939
+      ],
+      "tags": {
+        "addr:housenumber": "49",
+        "addr:street": "Cao Triều Phát",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "korean",
+        "name": "Matchandeul BBQ",
+        "name:ko": "맛찬들 왕소금구이",
+        "opening_hours": "Mo-Su 11:00-23:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1349939811,
+      "nodes": [
+        12487998732,
+        12487998731,
+        12487998729,
+        12487998730,
+        12487998732
+      ],
+      "tags": {
+        "addr:housenumber": "45-47",
+        "addr:street": "Nội Khu Hưng Phước 2",
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "brand:wikipedia": "en:Starbucks",
+        "building": "yes",
+        "cuisine": "coffee_shop",
+        "name": "Starbucks",
+        "official_name": "Starbucks Coffee",
+        "opening_hours": "Mo-Su 07:00-22:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1350675519,
+      "nodes": [
+        12495964178,
+        12495964179,
+        9587268698,
+        12495964180,
+        12495964178
+      ],
+      "tags": {
+        "addr:housenumber": "46-48",
+        "addr:street": "Nội Khu Hưng Phước 3",
+        "amenity": "cafe",
+        "brand": "The Coffee House",
+        "brand:wikidata": "Q60775742",
+        "brand:wikipedia": "en:The Coffee House (coffeehouse chain)",
+        "building": "yes",
+        "cuisine": "coffee_shop;vietnamese",
+        "name": "The Coffee House",
+        "name:en": "The Coffee House",
+        "old_addr:housenumber": "R4-71,R1-72",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1354950567,
+      "nodes": [
+        12539348137,
+        12539348139,
+        12539348138,
+        12539348136,
+        12539348137
+      ],
+      "tags": {
+        "addr:housenumber": "R3-36",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "seafood",
+        "name": "Hải Sản Biển Nhớ",
+        "opening_hours": "Mo-Su 10:00-02:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1355144131,
+      "nodes": [
+        12541508106,
+        12541508107,
+        12541475194,
+        12541508105,
+        12541508106
+      ],
+      "tags": {
+        "addr:housenumber": "96",
+        "addr:street": "Đặng Đại Độ",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Dê Trương Định",
+        "name:ko": "쯔엉딘 염소고기",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1356010632,
+      "nodes": [
+        12549696639,
+        12549696640,
+        12549696613,
+        12549696610,
+        12549696639
+      ],
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "addr:district": "Quận 7",
+        "addr:housenumber": "45",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Phan Khiêm Ích",
+        "addr:subdistrict": "Tân Phong",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "vietnamese",
+        "name": "Ô Bun Cha",
+        "name:vi": "Ô Bún Chả"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1356154397,
+      "nodes": [
+        12551206748,
+        12551206747,
+        12551206715,
+        12551206724,
+        12551206748
+      ],
+      "tags": {
+        "addr:housenumber": "19",
+        "addr:street": "Phan Khiêm Ích",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "seafood",
+        "name": "Ốc Linh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1357178812,
+      "nodes": [
+        12561106201,
+        12561078998,
+        12561078968,
+        12561078969,
+        12561106201
+      ],
+      "tags": {
+        "addr:housenumber": "11A",
+        "addr:street": "Cao Triều Phát",
+        "amenity": "restaurant",
+        "name": "Kko Chi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1357178816,
+      "nodes": [
+        12561078997,
+        12561078966,
+        12561078970,
+        12561078999,
+        12561078997
+      ],
+      "tags": {
+        "addr:housenumber": "19-21",
+        "addr:street": "Cao Triều Phát",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/p/Xin-Ch%C3%A0o-%ED%8F%AC%EC%B0%A8-61552707860278/",
+        "cuisine": "korean;seafood",
+        "name": "Xin Chào",
+        "name:ko": "신짜오 포차"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1357857300,
+      "nodes": [
+        12566186096,
+        12566186067,
+        12566186066,
+        12566186095,
+        12566186096
+      ],
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:street": "Lê Văn Thiêm",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Bún bò Vỹ Dạ Xưa",
+        "phone": "+84925157333"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4859724750,
+      "lat": 10.7311483,
+      "lon": 106.708898
+    },
+    {
+      "type": "node",
+      "id": 4869085328,
+      "lat": 10.7309479,
+      "lon": 106.7083686
+    },
+    {
+      "type": "node",
+      "id": 9587268698,
+      "lat": 10.7307448,
+      "lon": 106.7068528
+    },
+    {
+      "type": "node",
+      "id": 9596909192,
+      "lat": 10.7307786,
+      "lon": 106.7082449
+    },
+    {
+      "type": "node",
+      "id": 9596922004,
+      "lat": 10.730647,
+      "lon": 106.7083763
+    },
+    {
+      "type": "node",
+      "id": 9597008231,
+      "lat": 10.731283,
+      "lon": 106.7088946
+    },
+    {
+      "type": "node",
+      "id": 12487998729,
+      "lat": 10.7312675,
+      "lon": 106.7069558
+    },
+    {
+      "type": "node",
+      "id": 12487998730,
+      "lat": 10.7314022,
+      "lon": 106.7069524
+    },
+    {
+      "type": "node",
+      "id": 12487998731,
+      "lat": 10.7312644,
+      "lon": 106.7068278
+    },
+    {
+      "type": "node",
+      "id": 12487998732,
+      "lat": 10.7313991,
+      "lon": 106.7068244
+    },
+    {
+      "type": "node",
+      "id": 12495964178,
+      "lat": 10.7306128,
+      "lon": 106.7069673
+    },
+    {
+      "type": "node",
+      "id": 12495964179,
+      "lat": 10.7307475,
+      "lon": 106.7069639
+    },
+    {
+      "type": "node",
+      "id": 12495964180,
+      "lat": 10.7306101,
+      "lon": 106.7068563
+    },
+    {
+      "type": "node",
+      "id": 12497451927,
+      "lat": 10.7308101,
+      "lon": 106.7082441
+    },
+    {
+      "type": "node",
+      "id": 12497451933,
+      "lat": 10.7306426,
+      "lon": 106.7081934
+    },
+    {
+      "type": "node",
+      "id": 12497451936,
+      "lat": 10.7307773,
+      "lon": 106.70819
+    },
+    {
+      "type": "node",
+      "id": 12497451951,
+      "lat": 10.7309448,
+      "lon": 106.7082407
+    },
+    {
+      "type": "node",
+      "id": 12563427635,
+      "lat": 10.731151,
+      "lon": 106.7090077
+    },
+    {
+      "type": "node",
+      "id": 12563427636,
+      "lat": 10.7312857,
+      "lon": 106.7090043
+    },
+    {
+      "type": "node",
+      "id": 12566186066,
+      "lat": 10.73118,
+      "lon": 106.710198
+    },
+    {
+      "type": "node",
+      "id": 12566186067,
+      "lat": 10.7313147,
+      "lon": 106.7101946
+    },
+    {
+      "type": "node",
+      "id": 12566186095,
+      "lat": 10.7311825,
+      "lon": 106.7102988
+    },
+    {
+      "type": "node",
+      "id": 12566186096,
+      "lat": 10.7313172,
+      "lon": 106.7102954
+    },
+    {
+      "type": "node",
+      "id": 9587268693,
+      "lat": 10.731734,
+      "lon": 106.7083486
+    },
+    {
+      "type": "node",
+      "id": 12484323039,
+      "lat": 10.7326335,
+      "lon": 106.7077068
+    },
+    {
+      "type": "node",
+      "id": 12484323044,
+      "lat": 10.7326362,
+      "lon": 106.7078164
+    },
+    {
+      "type": "node",
+      "id": 12484323045,
+      "lat": 10.7324781,
+      "lon": 106.7081497
+    },
+    {
+      "type": "node",
+      "id": 12484323046,
+      "lat": 10.7326128,
+      "lon": 106.7081463
+    },
+    {
+      "type": "node",
+      "id": 12484323050,
+      "lat": 10.7324754,
+      "lon": 106.70804
+    },
+    {
+      "type": "node",
+      "id": 12484323051,
+      "lat": 10.7326101,
+      "lon": 106.7080366
+    },
+    {
+      "type": "node",
+      "id": 12484323062,
+      "lat": 10.7327682,
+      "lon": 106.7077033
+    },
+    {
+      "type": "node",
+      "id": 12484323065,
+      "lat": 10.7327709,
+      "lon": 106.707813
+    },
+    {
+      "type": "node",
+      "id": 12485022911,
+      "lat": 10.7317038,
+      "lon": 106.7071074
+    },
+    {
+      "type": "node",
+      "id": 12485022922,
+      "lat": 10.7317011,
+      "lon": 106.7069977
+    },
+    {
+      "type": "node",
+      "id": 12485022933,
+      "lat": 10.7318385,
+      "lon": 106.707104
+    },
+    {
+      "type": "node",
+      "id": 12485022934,
+      "lat": 10.7318358,
+      "lon": 106.7069943
+    },
+    {
+      "type": "node",
+      "id": 12487128939,
+      "lat": 10.7318687,
+      "lon": 106.7083452
+    },
+    {
+      "type": "node",
+      "id": 12487128940,
+      "lat": 10.7317322,
+      "lon": 106.7082755
+    },
+    {
+      "type": "node",
+      "id": 12487128941,
+      "lat": 10.7318669,
+      "lon": 106.7082721
+    },
+    {
+      "type": "node",
+      "id": 12539348136,
+      "lat": 10.7329964,
+      "lon": 106.7093672
+    },
+    {
+      "type": "node",
+      "id": 12539348137,
+      "lat": 10.7331311,
+      "lon": 106.7093638
+    },
+    {
+      "type": "node",
+      "id": 12539348138,
+      "lat": 10.732992,
+      "lon": 106.7091844
+    },
+    {
+      "type": "node",
+      "id": 12539348139,
+      "lat": 10.7331267,
+      "lon": 106.709181
+    },
+    {
+      "type": "node",
+      "id": 12541475194,
+      "lat": 10.7331818,
+      "lon": 106.7101504
+    },
+    {
+      "type": "node",
+      "id": 12541508105,
+      "lat": 10.7331836,
+      "lon": 106.7102235
+    },
+    {
+      "type": "node",
+      "id": 12541508106,
+      "lat": 10.7333183,
+      "lon": 106.7102201
+    },
+    {
+      "type": "node",
+      "id": 12541508107,
+      "lat": 10.7333165,
+      "lon": 106.710147
+    },
+    {
+      "type": "node",
+      "id": 12549696610,
+      "lat": 10.7326604,
+      "lon": 106.7088066
+    },
+    {
+      "type": "node",
+      "id": 12549696613,
+      "lat": 10.7326591,
+      "lon": 106.7087518
+    },
+    {
+      "type": "node",
+      "id": 12549696639,
+      "lat": 10.7327951,
+      "lon": 106.7088032
+    },
+    {
+      "type": "node",
+      "id": 12549696640,
+      "lat": 10.7327938,
+      "lon": 106.7087484
+    },
+    {
+      "type": "node",
+      "id": 12551206715,
+      "lat": 10.7326783,
+      "lon": 106.7095388
+    },
+    {
+      "type": "node",
+      "id": 12551206724,
+      "lat": 10.7326827,
+      "lon": 106.7097216
+    },
+    {
+      "type": "node",
+      "id": 12551206747,
+      "lat": 10.732813,
+      "lon": 106.7095354
+    },
+    {
+      "type": "node",
+      "id": 12551206748,
+      "lat": 10.7328174,
+      "lon": 106.7097182
+    },
+    {
+      "type": "node",
+      "id": 12561078966,
+      "lat": 10.7317635,
+      "lon": 106.7096344
+    },
+    {
+      "type": "node",
+      "id": 12561078968,
+      "lat": 10.7317689,
+      "lon": 106.7098538
+    },
+    {
+      "type": "node",
+      "id": 12561078969,
+      "lat": 10.7317702,
+      "lon": 106.7099086
+    },
+    {
+      "type": "node",
+      "id": 12561078970,
+      "lat": 10.7317662,
+      "lon": 106.7097441
+    },
+    {
+      "type": "node",
+      "id": 12561078997,
+      "lat": 10.7318983,
+      "lon": 106.709631
+    },
+    {
+      "type": "node",
+      "id": 12561078998,
+      "lat": 10.7319036,
+      "lon": 106.7098504
+    },
+    {
+      "type": "node",
+      "id": 12561078999,
+      "lat": 10.7319009,
+      "lon": 106.7097407
+    },
+    {
+      "type": "node",
+      "id": 12561106201,
+      "lat": 10.731905,
+      "lon": 106.7099052
+    },
+    {
+      "type": "node",
+      "id": 11360195051,
+      "lat": 10.7316767,
+      "lon": 106.7159471
+    },
+    {
+      "type": "node",
+      "id": 11360195052,
+      "lat": 10.7317694,
+      "lon": 106.715886
+    },
+    {
+      "type": "node",
+      "id": 11360195053,
+      "lat": 10.7319211,
+      "lon": 106.7161388
+    },
+    {
+      "type": "node",
+      "id": 11360195054,
+      "lat": 10.7318243,
+      "lon": 106.7162002
+    },
+    {
+      "type": "node",
+      "id": 1987338491,
+      "lat": 10.7294172,
+      "lon": 106.7205049
+    },
+    {
+      "type": "node",
+      "id": 1987339085,
+      "lat": 10.7296875,
+      "lon": 106.7203345
+    },
+    {
+      "type": "node",
+      "id": 1987339341,
+      "lat": 10.7294779,
+      "lon": 106.7199899
+    },
+    {
+      "type": "node",
+      "id": 1987340052,
+      "lat": 10.7292075,
+      "lon": 106.7201603
+    }
+  ]
+}
