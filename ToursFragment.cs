@@ -40,6 +40,11 @@ namespace poimap
             View headerView = inflater.Inflate(Resource.Layout.layout_tours_header, null, false);
             _listTours?.AddHeaderView(headerView);
 
+            headerView.FindViewById<TextView>(Resource.Id.txtHeaderTitle1)!.Text = LanguageHelper.GetText("Lộ trình tham quan");
+            headerView.FindViewById<TextView>(Resource.Id.txtHeaderDesc)!.Text = LanguageHelper.GetText("Khám phá Vĩnh Khánh theo lộ trình của bạn");
+            headerView.FindViewById<TextView>(Resource.Id.txtHeaderTitle2)!.Text = LanguageHelper.GetText("Lộ trình nổi bật");
+            headerView.FindViewById<TextView>(Resource.Id.txtHeaderTitle3)!.Text = LanguageHelper.GetText("Tất cả lộ trình");
+
             _layoutFeatured1 = headerView.FindViewById<RelativeLayout>(Resource.Id.layoutFeatured1);
             _layoutFeatured2 = headerView.FindViewById<RelativeLayout>(Resource.Id.layoutFeatured2);
             _txtFeaturedTour1 = headerView.FindViewById<TextView>(Resource.Id.txtFeaturedTour1);

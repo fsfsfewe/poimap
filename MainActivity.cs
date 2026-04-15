@@ -118,6 +118,21 @@ namespace poimap
             SetContentView(Resource.Layout.activity_main);
 
             _bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
+
+            if (_bottomNavigation != null)
+            {
+                // Tìm từng nút trong Menu bằng ID của nó và ép đổi tên
+                var menu = _bottomNavigation.Menu;
+
+                var mapItem = menu.FindItem(Resource.Id.navigation_map);
+                if (mapItem != null) mapItem.SetTitle(LanguageHelper.GetText("Bản đồ"));
+
+                var toursItem = menu.FindItem(Resource.Id.navigation_tours);
+                if (toursItem != null) toursItem.SetTitle(LanguageHelper.GetText("Tour ăn uống"));
+
+                var profileItem = menu.FindItem(Resource.Id.navigation_profile);
+                if (profileItem != null) profileItem.SetTitle(LanguageHelper.GetText("Cá nhân"));
+            }
             _categoryBar = FindViewById<HorizontalScrollView>(Resource.Id.category_bar);
 
             // --- ÁNH XẠ THANH TÌM KIẾM ---
@@ -125,6 +140,12 @@ namespace poimap
             _edtSearch = FindViewById<Android.Widget.EditText>(Resource.Id.edtSearch);
             _listSearchResults = FindViewById<Android.Widget.ListView>(Resource.Id.listSearchResults);
 
+            // Trong hàm OnCreate, ngay sau khi ánh xạ _searchLayout và _edtSearch:
+            if (_edtSearch != null) _edtSearch.Hint = LanguageHelper.GetText("Tìm kiếm quán ăn...");
+
+            // Ngay phía trên dòng bắt sự kiện click cho các nút danh mục:
+            var btnAll = FindViewById<Android.Widget.Button>(Resource.Id.btnAll);
+            if (btnAll != null) btnAll.Text = LanguageHelper.GetText("Tất cả");
 
 
             // Cài đặt Adapter cho danh sách kết quả

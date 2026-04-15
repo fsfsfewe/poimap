@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A">
+
+	<FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#222222" />
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan QR to open Audio Guide"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textAlignment="center"/>
+
+	<View
+        android:id="@+id/qr_frame_mock"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_card"
+        android:backgroundTint="#00000000"
+        android:backgroundTintMode="add"/>
+	<TextView
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Place QR inside the frame to choose language and enter app"
+	android:textColor="#AAAAAA"
+	android:layout_below="@+id/qr_frame_mock"
+	android:layout_centerHorizontal="true"
+	android:layout_marginTop="20dp"
+	android:textAlignment="center"
+	android:paddingLeft="30dp"
+	android:paddingRight="30dp"/>
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center">
+
+		<Button
+            android:id="@+id/btnOpenScanner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="📸 BẬT CAMERA QUÉT"
+            android:backgroundTint="#6A0DAD"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp"/>
+
+		<Button
+            android:id="@+id/btnPickGallery"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🖼️ DÙNG ẢNH CÓ SẴN"
+            android:backgroundTint="#008080"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+	</LinearLayout>
+
+</RelativeLayout>

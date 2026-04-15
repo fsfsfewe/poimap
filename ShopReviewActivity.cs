@@ -23,6 +23,10 @@ namespace poimap
             var edtComment = FindViewById<EditText>(Resource.Id.edtComment);
             var btnSubmit = FindViewById<Button>(Resource.Id.btnSubmitReview);
 
+            FindViewById<TextView>(Resource.Id.txtReviewTitle)!.Text = LanguageHelper.GetText("Đánh giá Quán Ăn");
+            if (edtComment != null) edtComment.Hint = LanguageHelper.GetText("Chia sẻ trải nghiệm của bạn về quán này...");
+            if (btnSubmit != null) btnSubmit.Text = LanguageHelper.GetText("LƯU ĐÁNH GIÁ");
+
             btnSubmit!.Click += (s, e) =>
             {
                 float stars = ratingBar?.Rating ?? 0;
@@ -30,7 +34,7 @@ namespace poimap
 
                 if (stars == 0)
                 {
-                    Toast.MakeText(this, "Vui lòng chọn số sao!", ToastLength.Short)?.Show();
+                    Toast.MakeText(this, LanguageHelper.GetText("Vui lòng chọn số sao!"), ToastLength.Short)?.Show();
                     return;
                 }
                 // CẬP NHẬT MỚI: Sử dụng JavaDictionary thay vì Dictionary của C#
@@ -55,7 +59,7 @@ namespace poimap
             public SuccessListener(Activity activity) { _activity = activity; }
             public void OnSuccess(Java.Lang.Object? result)
             {
-                Toast.MakeText(_activity, "Cảm ơn bạn đã đánh giá!", ToastLength.Long)?.Show();
+                Toast.MakeText(_activity, LanguageHelper.GetText("Cảm ơn bạn đã đánh giá!"), ToastLength.Long)?.Show();
                 _activity.Finish(); // Đóng màn hình quay về bản đồ
             }
         }
@@ -66,7 +70,7 @@ namespace poimap
             public FailureListener(Activity activity) { _activity = activity; }
             public void OnFailure(Java.Lang.Exception e)
             {
-                Toast.MakeText(_activity, "Lỗi kết nối mạng", ToastLength.Short)?.Show();
+                Toast.MakeText(_activity, LanguageHelper.GetText("Lỗi kết nối mạng"), ToastLength.Short)?.Show();
             }
         }
     }

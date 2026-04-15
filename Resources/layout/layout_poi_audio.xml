@@ -8,6 +8,7 @@
     android:gravity="center_horizontal">
 
 	<TextView
+		android:id="@+id/txtAudioTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Khám phá Địa điểm"
@@ -44,6 +45,7 @@
         android:layout_marginTop="20dp">
 
 		<TextView
+			android:id="@+id/txtAudioLangLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ngôn ngữ: "

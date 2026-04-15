@@ -18,6 +18,12 @@ namespace poimap
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.layout_poi_audio);
 
+            var txtTitle = FindViewById<TextView>(Resource.Id.txtAudioTitle);
+            if (txtTitle != null) txtTitle.Text = LanguageHelper.GetText("Khám phá Địa điểm");
+
+            var txtLangLabel = FindViewById<TextView>(Resource.Id.txtAudioLangLabel);
+            if (txtLangLabel != null) txtLangLabel.Text = LanguageHelper.GetText("Ngôn ngữ: ");
+
             // Nhận tên POI và link Audio từ màn hình bản đồ truyền sang
             string poiName = Intent?.GetStringExtra("POI_NAME") ?? "Địa điểm";
             string audioUrl = Intent?.GetStringExtra("AUDIO_URL") ?? "";
@@ -31,9 +37,9 @@ namespace poimap
             {
                 _mediaPlayer.SetDataSource(audioUrl);
                 _mediaPlayer.PrepareAsync(); // Tải nhạc từ mạng
-                _mediaPlayer.Prepared += (s, e) => Toast.MakeText(this, "Đã tải xong Audio, sẵn sàng phát!", ToastLength.Short)?.Show();
+                _mediaPlayer.Prepared += (s, e) => Toast.MakeText(this, LanguageHelper.GetText("Đã tải xong Audio, sẵn sàng phát!"), ToastLength.Short)?.Show();
             }
-            catch { Toast.MakeText(this, "Lỗi tải Audio", ToastLength.Short)?.Show(); }
+            catch { Toast.MakeText(this, LanguageHelper.GetText("Lỗi tải Audio"), ToastLength.Short)?.Show(); }
             // Bắt sự kiện nút Play/Pause
             if (_btnPlayPause != null)
             {

@@ -44,6 +44,9 @@ namespace poimap
 
             LoadReviewsFromFirebase();
 
+            view.FindViewById<TextView>(Resource.Id.txtProfileName)!.Text = LanguageHelper.GetText("Khách hàng Ẩn danh");
+            view.FindViewById<TextView>(Resource.Id.txtProfileHistory)!.Text = LanguageHelper.GetText("LỊCH SỬ ĐÁNH GIÁ CỦA BẠN");
+
             return view;
         }
 

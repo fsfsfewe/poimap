@@ -20,6 +20,8 @@ namespace poimap
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_tour_detail);
 
+            FindViewById<TextView>(Resource.Id.txtTourDetailLabel)!.Text = LanguageHelper.GetText("DANH SÁCH ĐỊA ĐIỂM TRONG TOUR");
+
             string tourName = Intent?.GetStringExtra("TOUR_NAME") ?? "Chi tiết Tour";
             FindViewById<TextView>(Resource.Id.txtDetailTourName)!.Text = tourName;
             FindViewById<ImageButton>(Resource.Id.btnBackToTours)!.Click += (s, e) => Finish();
@@ -73,7 +75,7 @@ namespace poimap
             }
             else
             {
-                Toast.MakeText(this, "Không có dữ liệu. Vui lòng kiểm tra lại tên Tour trên Firebase!", ToastLength.Long)?.Show();
+                Toast.MakeText(this, LanguageHelper.GetText("Không có dữ liệu. Vui lòng kiểm tra lại tên Tour trên Firebase!"), ToastLength.Long)?.Show();
             }
         }
     }

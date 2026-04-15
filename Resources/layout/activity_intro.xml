@@ -5,21 +5,50 @@
     android:background="#F5F0FF"
     android:padding="30dp">
 
-    <LinearLayout
+	<LinearLayout
+        android:id="@+id/btnLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true">
+
+		<TextView
+            android:id="@+id/txtLangLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngôn ngữ"
+            android:textColor="#6A0DAD"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"/>
+
+		<ImageView
+            android:id="@+id/imgLangFlag"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/ic_dialog_map" />
+	</LinearLayout>
+	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_centerInParent="true">
 
-        <ImageView
+		<ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@android:drawable/ic_dialog_map"
             android:background="#D8B4F8"
             android:padding="20dp"/>
 
-        <TextView
+		<TextView
+            android:id="@+id/txtAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POIMAP TOUR"
@@ -28,7 +57,8 @@
             android:textColor="#6A0DAD"
             android:layout_marginTop="20dp"/>
 
-        <TextView
+		<TextView
+            android:id="@+id/txtAppDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Khám phá ẩm thực và văn hóa Quận 4 theo cách hoàn toàn mới qua hệ thống Audio tự động."
@@ -36,9 +66,9 @@
             android:textColor="#555555"
             android:textAlignment="center"
             android:layout_marginTop="15dp"/>
-    </LinearLayout>
+	</LinearLayout>
 
-    <Button
+	<Button
         android:id="@+id/btnContinueToQr"
         android:layout_width="match_parent"
         android:layout_height="60dp"
