@@ -16,7 +16,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Android.Content;
-
+using System.Text;
+using System.Globalization;
 
 namespace poimap
 {
@@ -57,24 +58,32 @@ namespace poimap
         private string _currentPlayingPoi = "";
 
         private const int RequestLocationId = 1;
-
-        // Xử lý khi người dùng gõ chữ vào thanh tìm kiếm
         private void EdtSearch_TextChanged(object? sender, Android.Text.TextChangedEventArgs e)
         {
-            string keyword = e.Text?.ToString().ToLower() ?? "";
+            string keyword = e.Text?.ToString().Trim() ?? "";
             _searchResultsNames.Clear();
 
             if (string.IsNullOrEmpty(keyword))
             {
-                // Nếu không nhập gì, hiển thị tất cả quán (Auto gợi ý)
                 ShowAllQ4Shops();
                 return;
             }
 
-            // Nếu có nhập chữ, lọc danh sách
+            string normalizedKeyword = RemoveDiacritics(keyword.ToLower());
+
             foreach (var shopName in _allShopsDict.Keys)
             {
-                if (shopName.ToLower().Contains(keyword))
+                string normalizedShopName = RemoveDiacritics(shopName.ToLower());
+
+                // Hỗ trợ tìm kiếm thông minh bằng cả Tiếng Anh lẫn Việt (Smart Search)
+                string category = _shopCategoryByNameDict.ContainsKey(shopName) ? _shopCategoryByNameDict[shopName].ToLower() : "";
+                string categoryVietnameseAlias = "";
+                if (category == "museum") categoryVietnameseAlias = "bao tang";
+                else if (category == "restaurant") categoryVietnameseAlias = "nha hang quan an do an";
+                else if (category == "cafe") categoryVietnameseAlias = "ca phe cafe quan nuoc";
+                else if (category == "park") categoryVietnameseAlias = "cong vien";
+
+                if (normalizedShopName.Contains(normalizedKeyword) || categoryVietnameseAlias.Contains(normalizedKeyword))
                 {
                     _searchResultsNames.Add(shopName);
                 }
@@ -82,13 +91,42 @@ namespace poimap
 
             if (_searchResultsNames.Count > 0)
             {
+                // 🔥 ĐIỂM SỬA QUAN TRỌNG Ở ĐÂY 🔥
+                // Tạo Adapter mới hoàn toàn và ép ListView nhận nó
+                _searchAdapter = new Android.Widget.ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, _searchResultsNames);
+                _listSearchResults!.Adapter = _searchAdapter;
+
                 _listSearchResults!.Visibility = ViewStates.Visible;
-                _searchAdapter?.NotifyDataSetChanged();
             }
             else
             {
                 _listSearchResults!.Visibility = ViewStates.Gone;
             }
+        }
+
+        // ==========================================
+        // HÀM HELPER: XÓA DẤU TIẾNG VIỆT
+        // ==========================================
+        private string RemoveDiacritics(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return text;
+
+            // Tách các dấu (như sắc, huyền, hỏi, ngã, nặng) ra khỏi chữ cái
+            var normalizedString = text.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            foreach (var c in normalizedString)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                // Bỏ qua các ký tự dấu
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            // Ghép lại và xử lý riêng 2 chữ Đ đ của tiếng Việt
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace("đ", "d").Replace("Đ", "D");
         }
 
         // Xử lý khi người dùng bấm vào một quán trong danh sách xổ xuống
@@ -461,11 +499,13 @@ namespace poimap
 
             if (_searchResultsNames.Count > 0 && _listSearchResults != null)
             {
+                // 🔥 ĐIỂM SỬA QUAN TRỌNG Ở ĐÂY 🔥
+                _searchAdapter = new Android.Widget.ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, _searchResultsNames);
+                _listSearchResults.Adapter = _searchAdapter;
+
                 _listSearchResults.Visibility = ViewStates.Visible;
-                _searchAdapter?.NotifyDataSetChanged();
             }
         }
-
         // Biến lưu trữ đường vẽ hiện tại (để xóa đường cũ khi chọn quán khác)
         private Polyline? _currentPolyline;
 
